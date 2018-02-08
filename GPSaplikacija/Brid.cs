@@ -8,16 +8,18 @@ namespace GPSaplikacija
 {
     public class Brid : IComparable<Brid>
     {
+        string naziv;
         Čvor početniČvor;
         Čvor završniČvor;
         double vrijemeProlaska;
 
-        public Brid(Čvor početni, Čvor završni, double vrijeme)
+        public Brid(string naziv, Čvor početni, Čvor završni, double vrijeme)
         {
+            this.naziv = naziv;
             početniČvor = početni;
             završniČvor = završni;
             vrijemeProlaska = vrijeme;
-            Console.WriteLine("Dodan brid s pocetnim čvorom na (" + početniČvor.X + "," + početniČvor.Y + ") i zavrsnim čvorom na (" + završniČvor.X + "," + završniČvor.Y + ") te vremenom " + vrijemeProlaska);
+            Console.WriteLine("Dodan brid od " + početniČvor.naziv + " do " + završniČvor.naziv + " s vremenom " + vrijemeProlaska);
         }
 
         public int CompareTo(Brid nekiBrid)

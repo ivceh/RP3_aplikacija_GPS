@@ -8,14 +8,17 @@ namespace GPSaplikacija
 {
     public class Čvor : IComparable<Čvor>
     {
+        public string naziv;
         double x;
         double y;
         SortedSet<Brid> skupSusjednihBridova = new SortedSet<Brid>();
 
-        public Čvor(double x, double y)
+        public Čvor(string naziv, double x, double y)
         {
+            this.naziv = naziv;
             this.x = x;
             this.y = y;
+            Console.WriteLine("Dodan čvor " + this.naziv + " s kordinatama (" + this.x + "," + this.y + ")");
         }
 
         public void DodajSusjedniBrid(Brid susjed)

@@ -23,9 +23,9 @@ namespace GPSaplikacija
                 JArray bridovi = (JArray)planObjekt["bridovi"];
 
                 for (int i = 0; i < cvorovi.Count; i++)
-                    DodajČvor((Double)cvorovi[i]["x"], (Double)cvorovi[i]["y"]);
+                    DodajČvor((string)cvorovi[i]["naziv"], (Double)cvorovi[i]["x"], (Double)cvorovi[i]["y"]);
                 for (int i = 0; i < bridovi.Count; i++)
-                    DodajBrid(skupČvorova[(int)bridovi[i]["c1"]], skupČvorova[(int)bridovi[i]["c2"]], (double)bridovi[i]["vrijeme"]);
+                    DodajBrid((string)bridovi[i]["naziv"], skupČvorova[(int)bridovi[i]["c1"]], skupČvorova[(int)bridovi[i]["c2"]], (double)bridovi[i]["vrijeme"]);
             }
             catch (Exception e)
             {
@@ -33,14 +33,14 @@ namespace GPSaplikacija
             }
         }
 
-        public static void DodajČvor(double x, double y)
+        public static void DodajČvor(string n, double x, double y)
         {
-            skupČvorova.Add(new Čvor(x, y));
+            skupČvorova.Add(new Čvor(n, x, y));
         }
 
-        public static void DodajBrid(Čvor p, Čvor z, double vrijeme)
+        public static void DodajBrid(string n, Čvor p, Čvor z, double vrijeme)
         {
-            skupBridova.Add(new Brid(p, z, vrijeme));
+            skupBridova.Add(new Brid(n, p, z, vrijeme));
         }
 
         public static List<Čvor> SkupČvorova
