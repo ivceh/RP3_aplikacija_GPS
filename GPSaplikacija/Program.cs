@@ -14,6 +14,8 @@ namespace GPSaplikacija
         [STAThread]
         static void Main()
         {
+            Plan.UcitajPlan("grad1.txt");
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
