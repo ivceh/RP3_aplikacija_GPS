@@ -254,14 +254,14 @@
             // čvorToolStripMenuItem
             // 
             this.čvorToolStripMenuItem.Name = "čvorToolStripMenuItem";
-            this.čvorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.čvorToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.čvorToolStripMenuItem.Text = "Čvor";
             this.čvorToolStripMenuItem.Click += new System.EventHandler(this.čvorToolStripMenuItem_Click);
             // 
             // bridToolStripMenuItem
             // 
             this.bridToolStripMenuItem.Name = "bridToolStripMenuItem";
-            this.bridToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bridToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.bridToolStripMenuItem.Text = "Brid";
             this.bridToolStripMenuItem.Click += new System.EventHandler(this.bridToolStripMenuItem_Click);
             // 
@@ -279,14 +279,16 @@
             // najkraćiToolStripMenuItem
             // 
             this.najkraćiToolStripMenuItem.Name = "najkraćiToolStripMenuItem";
-            this.najkraćiToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.najkraćiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.najkraćiToolStripMenuItem.Text = "Najkraći";
+            this.najkraćiToolStripMenuItem.Click += new System.EventHandler(this.najkraćiToolStripMenuItem_Click);
             // 
             // posaoUsputToolStripMenuItem
             // 
             this.posaoUsputToolStripMenuItem.Name = "posaoUsputToolStripMenuItem";
-            this.posaoUsputToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.posaoUsputToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.posaoUsputToolStripMenuItem.Text = "Posao usput";
+            this.posaoUsputToolStripMenuItem.Click += new System.EventHandler(this.posaoUsputToolStripMenuItem_Click);
             // 
             // toolStripButton3
             // 
@@ -296,6 +298,7 @@
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(52, 22);
             this.toolStripButton3.Text = "Pronađi";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // Form1
             // 
