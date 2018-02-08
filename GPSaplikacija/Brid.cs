@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GPSaplikacija
 {
-    class Brid : IComparable<Brid>
+    public class Brid : IComparable<Brid>
     {
         Čvor početniČvor;
         Čvor završniČvor;
@@ -17,6 +17,7 @@ namespace GPSaplikacija
             početniČvor = početni;
             završniČvor = završni;
             vrijemeProlaska = vrijeme;
+            Console.WriteLine("Dodan brid s pocetnim čvorom na (" + početniČvor.X + "," + početniČvor.Y + ") i zavrsnim čvorom na (" + završniČvor.X + "," + završniČvor.Y + ") te vremenom " + vrijemeProlaska);
         }
 
         public int CompareTo(Brid nekiBrid)

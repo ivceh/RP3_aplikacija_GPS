@@ -1,0 +1,17 @@
+{
+	"ime": "Zagreb",
+	"cvorovi": [
+		{ "naziv": "C1", "x": 230, "y": 76 },
+		{ "naziv": "C2", "x": 37, "y": 400 },
+		{ "naziv": "C3", "x": 90, "y": 40 },
+		{ "naziv": "C4", "x": 300, "y": 230 }
+	],
+	"bridovi": [
+		{ "naziv": "B1", "c1": 0, "c2": 1, "vrijeme": 2.43 },
+		{ "naziv": "B2", "c1": 0, "c2": 2, "vrijeme": 4.33 },
+		{ "naziv": "B3", "c1": 0, "c2": 3, "vrijeme": 7 },
+		{ "naziv": "B4", "c1": 1, "c2": 2, "vrijeme": 10.3 },
+		{ "naziv": "B5", "c1": 1, "c2": 3, "vrijeme": 8.7 },
+		{ "naziv": "B6", "c1": 2, "c2": 3, "vrijeme": 4.3 }
+	]
+}
