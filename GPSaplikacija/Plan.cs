@@ -9,8 +9,8 @@ namespace GPSaplikacija
 {
     public static class Plan
     {
-        public static List<Čvor> skupČvorova = new List<Čvor>();
-        public static List<Brid> skupBridova = new List<Brid>();
+        public static Dictionary<string, Čvor> skupČvorova = new Dictionary<string, Čvor>();
+        public static Dictionary<string, Brid> skupBridova = new Dictionary<string, Brid>();
 
         public static void UcitajPlan(String confFile)
         {
@@ -23,9 +23,21 @@ namespace GPSaplikacija
                 JArray bridovi = (JArray)planObjekt["bridovi"];
 
                 for (int i = 0; i < cvorovi.Count; i++)
-                    DodajČvor((string)cvorovi[i]["naziv"], (Double)cvorovi[i]["x"], (Double)cvorovi[i]["y"]);
+                {
+                    skupČvorova[(string)cvorovi[i]["naziv"]] = new Čvor((string)cvorovi[i]["naziv"], (Double)cvorovi[i]["x"], (Double)cvorovi[i]["y"]);
+                }
+
                 for (int i = 0; i < bridovi.Count; i++)
-                    DodajBrid((string)bridovi[i]["naziv"], skupČvorova[(int)bridovi[i]["c1"]], skupČvorova[(int)bridovi[i]["c2"]], (double)bridovi[i]["vrijeme"]);
+                {
+                    string naz = (string)bridovi[i]["naziv"];
+                    string poc = (string)bridovi[i]["pocetni"];
+                    string zav = (string)bridovi[i]["zavrsni"];
+
+                    skupBridova[naz] = new Brid(naz, skupČvorova[poc], skupČvorova[zav], (double)bridovi[i]["vrijeme"]);
+
+                    skupČvorova[poc].DodajSusjedniBrid(skupBridova[naz]);
+                    skupČvorova[zav].DodajSusjedniBrid(skupBridova[naz]);
+                }
             }
             catch (Exception e)
             {
@@ -33,22 +45,12 @@ namespace GPSaplikacija
             }
         }
 
-        public static void DodajČvor(string n, double x, double y)
-        {
-            skupČvorova.Add(new Čvor(n, x, y));
-        }
-
-        public static void DodajBrid(string n, Čvor p, Čvor z, double vrijeme)
-        {
-            skupBridova.Add(new Brid(n, p, z, vrijeme));
-        }
-
-        public static List<Čvor> SkupČvorova
+        public static Dictionary<string, Čvor> SkupČvorova
         {
             get { return skupČvorova; }
         }
 
-        public static List<Brid> SkupBridova
+        public static Dictionary<string, Brid> SkupBridova
         {
             get { return skupBridova; }
         }
