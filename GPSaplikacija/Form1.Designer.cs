@@ -48,6 +48,7 @@
             this.gumbLijevo = new System.Windows.Forms.Button();
             this.gumbDesno = new System.Windows.Forms.Button();
             this.gumbDolje = new System.Windows.Forms.Button();
+            this.labelOpis = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanelDesni.SuspendLayout();
@@ -88,10 +89,10 @@
             // 
             // koordinatePokazivaca
             // 
-            this.koordinatePokazivaca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.koordinatePokazivaca.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.koordinatePokazivaca.AutoSize = true;
             this.koordinatePokazivaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.koordinatePokazivaca.Location = new System.Drawing.Point(1027, 482);
+            this.koordinatePokazivaca.Location = new System.Drawing.Point(927, 443);
             this.koordinatePokazivaca.Name = "koordinatePokazivaca";
             this.koordinatePokazivaca.Size = new System.Drawing.Size(0, 25);
             this.koordinatePokazivaca.TabIndex = 1;
@@ -105,6 +106,7 @@
             this.tableLayoutPanelDesni.Controls.Add(this.gumbSmanji, 0, 0);
             this.tableLayoutPanelDesni.Controls.Add(this.gumbPovecaj, 1, 0);
             this.tableLayoutPanelDesni.Controls.Add(this.tableLayoutPanelStrelice, 0, 1);
+            this.tableLayoutPanelDesni.Controls.Add(this.labelOpis, 0, 2);
             this.tableLayoutPanelDesni.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelDesni.Location = new System.Drawing.Point(827, 28);
             this.tableLayoutPanelDesni.Name = "tableLayoutPanelDesni";
@@ -269,6 +271,19 @@
             this.gumbDolje.TabIndex = 3;
             this.gumbDolje.UseVisualStyleBackColor = true;
             // 
+            // labelOpis
+            // 
+            this.labelOpis.AutoSize = true;
+            this.labelOpis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tableLayoutPanelDesni.SetColumnSpan(this.labelOpis, 2);
+            this.labelOpis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelOpis.Location = new System.Drawing.Point(3, 205);
+            this.labelOpis.Name = "labelOpis";
+            this.labelOpis.Size = new System.Drawing.Size(194, 169);
+            this.labelOpis.TabIndex = 3;
+            this.labelOpis.Text = "Klikom na čvor ili brid ovdje se pojavljuje opis.";
+            this.labelOpis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,6 +300,7 @@
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanelDesni.ResumeLayout(false);
+            this.tableLayoutPanelDesni.PerformLayout();
             this.tableLayoutPanelStrelice.ResumeLayout(false);
             this.Dodaj.ResumeLayout(false);
             this.Dodaj.PerformLayout();
@@ -314,5 +330,6 @@
         private System.Windows.Forms.Button gumbLijevo;
         private System.Windows.Forms.Button gumbDesno;
         private System.Windows.Forms.Button gumbDolje;
+        private System.Windows.Forms.Label labelOpis;
     }
 }
