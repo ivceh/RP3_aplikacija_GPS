@@ -37,6 +37,11 @@
             this.gumbPovecaj = new System.Windows.Forms.Button();
             this.tableLayoutPanelStrelice = new System.Windows.Forms.TableLayoutPanel();
             this.gumbGore = new System.Windows.Forms.Button();
+            this.gumbLijevo = new System.Windows.Forms.Button();
+            this.gumbDesno = new System.Windows.Forms.Button();
+            this.gumbDolje = new System.Windows.Forms.Button();
+            this.labelOpis = new System.Windows.Forms.Label();
+            this.panelSaKontrolama = new System.Windows.Forms.Panel();
             this.Dodaj = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.čvorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,11 +50,6 @@
             this.najkraćiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.posaoUsputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.gumbLijevo = new System.Windows.Forms.Button();
-            this.gumbDesno = new System.Windows.Forms.Button();
-            this.gumbDolje = new System.Windows.Forms.Button();
-            this.labelOpis = new System.Windows.Forms.Label();
-            this.panelSaKontrolama = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanelDesni.SuspendLayout();
@@ -175,72 +175,6 @@
             this.gumbGore.TabIndex = 0;
             this.gumbGore.UseVisualStyleBackColor = true;
             // 
-            // Dodaj
-            // 
-            this.Dodaj.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3});
-            this.Dodaj.Location = new System.Drawing.Point(0, 0);
-            this.Dodaj.Name = "Dodaj";
-            this.Dodaj.Size = new System.Drawing.Size(1030, 25);
-            this.Dodaj.TabIndex = 1;
-            this.Dodaj.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.čvorToolStripMenuItem,
-            this.bridToolStripMenuItem});
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(51, 22);
-            this.toolStripButton1.Text = "Dodaj";
-            // 
-            // čvorToolStripMenuItem
-            // 
-            this.čvorToolStripMenuItem.Name = "čvorToolStripMenuItem";
-            this.čvorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.čvorToolStripMenuItem.Text = "Čvor";
-            this.čvorToolStripMenuItem.Click += new System.EventHandler(this.čvorToolStripMenuItem_Click);
-            // 
-            // bridToolStripMenuItem
-            // 
-            this.bridToolStripMenuItem.Name = "bridToolStripMenuItem";
-            this.bridToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.bridToolStripMenuItem.Text = "Brid";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.najkraćiToolStripMenuItem,
-            this.posaoUsputToolStripMenuItem});
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(66, 22);
-            this.toolStripButton2.Text = "Nađi put";
-            // 
-            // najkraćiToolStripMenuItem
-            // 
-            this.najkraćiToolStripMenuItem.Name = "najkraćiToolStripMenuItem";
-            this.najkraćiToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
-            this.najkraćiToolStripMenuItem.Text = "Najkraći";
-            // 
-            // posaoUsputToolStripMenuItem
-            // 
-            this.posaoUsputToolStripMenuItem.Name = "posaoUsputToolStripMenuItem";
-            this.posaoUsputToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
-            this.posaoUsputToolStripMenuItem.Text = "Posao usput";
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(52, 22);
-            this.toolStripButton3.Text = "Pronađi";
-            // 
             // gumbLijevo
             // 
             this.gumbLijevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gumbLijevo.BackgroundImage")));
@@ -295,6 +229,73 @@
             this.panelSaKontrolama.Name = "panelSaKontrolama";
             this.panelSaKontrolama.Size = new System.Drawing.Size(818, 96);
             this.panelSaKontrolama.TabIndex = 3;
+            // 
+            // Dodaj
+            // 
+            this.Dodaj.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripButton3});
+            this.Dodaj.Location = new System.Drawing.Point(0, 0);
+            this.Dodaj.Name = "Dodaj";
+            this.Dodaj.Size = new System.Drawing.Size(1030, 25);
+            this.Dodaj.TabIndex = 1;
+            this.Dodaj.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.čvorToolStripMenuItem,
+            this.bridToolStripMenuItem});
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(51, 22);
+            this.toolStripButton1.Text = "Dodaj";
+            // 
+            // čvorToolStripMenuItem
+            // 
+            this.čvorToolStripMenuItem.Name = "čvorToolStripMenuItem";
+            this.čvorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.čvorToolStripMenuItem.Text = "Čvor";
+            this.čvorToolStripMenuItem.Click += new System.EventHandler(this.čvorToolStripMenuItem_Click);
+            // 
+            // bridToolStripMenuItem
+            // 
+            this.bridToolStripMenuItem.Name = "bridToolStripMenuItem";
+            this.bridToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bridToolStripMenuItem.Text = "Brid";
+            this.bridToolStripMenuItem.Click += new System.EventHandler(this.bridToolStripMenuItem_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.najkraćiToolStripMenuItem,
+            this.posaoUsputToolStripMenuItem});
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(66, 22);
+            this.toolStripButton2.Text = "Nađi put";
+            // 
+            // najkraćiToolStripMenuItem
+            // 
+            this.najkraćiToolStripMenuItem.Name = "najkraćiToolStripMenuItem";
+            this.najkraćiToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.najkraćiToolStripMenuItem.Text = "Najkraći";
+            // 
+            // posaoUsputToolStripMenuItem
+            // 
+            this.posaoUsputToolStripMenuItem.Name = "posaoUsputToolStripMenuItem";
+            this.posaoUsputToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.posaoUsputToolStripMenuItem.Text = "Posao usput";
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButton3.Text = "Pronađi";
             // 
             // Form1
             // 

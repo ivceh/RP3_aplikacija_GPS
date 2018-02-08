@@ -31,3 +31,5 @@ C:\Users\eivaceh\Documents\Visual Studio 2015\Projects\faks\RP3_aplikacija_GPS\G
 C:\Users\eivaceh\Documents\Visual Studio 2015\Projects\faks\RP3_aplikacija_GPS\GPSaplikacija\obj\Debug\GPSaplikacija.exe
 C:\Users\eivaceh\Documents\Visual Studio 2015\Projects\faks\RP3_aplikacija_GPS\GPSaplikacija\obj\Debug\GPSaplikacija.pdb
 >>>>>>> d5f7d18f3fa902fef1e2f9fdf07e91c1abe4ab32
+C:\Users\sehorva\Documents\GitHub\RP3_aplikacija_GPS\GPSaplikacija\bin\Debug\Newtonsoft.Json.dll
+C:\Users\sehorva\Documents\GitHub\RP3_aplikacija_GPS\GPSaplikacija\bin\Debug\Newtonsoft.Json.xml
