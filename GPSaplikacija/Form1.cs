@@ -17,16 +17,6 @@ namespace GPSaplikacija
             InitializeComponent();
         }
 
-        private void PictureBox1_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics g = e.Graphics;
-            Pen p = new Pen(Color.Black);
-            Brush b = new SolidBrush(Color.LightYellow);
-
-            //g.DrawLine(p, 0, 0, 100, 100);
-            //g.DrawEllipse(p, 50, 100, 100, 100);
-        }
-
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             Point p = ((PictureBox)sender).PointToClient(Cursor.Position);
