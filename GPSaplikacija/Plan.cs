@@ -8,8 +8,8 @@ namespace GPSaplikacija
 {
     class Plan
     {
-        SortedSet<Čvor> skupČvorova;
-        SortedSet<Brid> skupBridova;
+        SortedSet<Čvor> skupČvorova = new SortedSet<Čvor>();
+        SortedSet<Brid> skupBridova = new SortedSet<Brid>();
 
         public void DodajČvor(double x, double y)
         {

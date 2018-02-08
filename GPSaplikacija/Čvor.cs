@@ -10,7 +10,7 @@ namespace GPSaplikacija
     {
         double x;
         double y;
-        SortedSet<Brid> skupSusjednihBridova;
+        SortedSet<Brid> skupSusjednihBridova = new SortedSet<Brid>();
 
         public Čvor(double x, double y)
         {
