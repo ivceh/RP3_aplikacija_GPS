@@ -27,10 +27,13 @@ namespace GPSaplikacija
             if(Plan.SkupČvorova.Any() && Plan.SkupČvorova.Count > 1)
             {
                 double minx, maxx, miny, maxy;
-                minx = Plan.SkupČvorova.Min(a => a.X);
-                miny = Plan.SkupČvorova.Min(a => a.Y);
-                maxx = Plan.SkupČvorova.Max(a => a.X);
-                maxy = Plan.SkupČvorova.Max(a => a.Y);
+
+                var čvorovi = Plan.skupČvorova.Values;
+
+                minx = čvorovi.Min(a => a.X);
+                miny = čvorovi.Min(a => a.Y);
+                maxx = čvorovi.Max(a => a.X);
+                maxy = čvorovi.Max(a => a.Y);
 
                 if ((maxx-minx)/pictureBox1.Width > (maxy - miny) / visina)
                 {
@@ -67,7 +70,7 @@ namespace GPSaplikacija
 
             foreach (Pen p in new Pen[]{pBridVanjska, pBridUnutarnja})
             {
-                foreach (Brid b in Plan.SkupBridova)
+                foreach (Brid b in Plan.SkupBridova.Values)
                 {
                     Čvor cp = b.PočetniČvor, cz = b.ZavršniČvor;
 
@@ -81,7 +84,7 @@ namespace GPSaplikacija
                 }
             }
             
-            foreach (Čvor č in Plan.skupČvorova)
+            foreach (Čvor č in Plan.skupČvorova.Values)
             {
                 float xNaMapi, yNaMapi;
                 xNaMapi = (float)Skaliraj(č.X, xlijevi, xdesni, 0, pictureBox1.Width);

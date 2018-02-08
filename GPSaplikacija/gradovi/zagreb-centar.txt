@@ -14,13 +14,13 @@
 	"bridovi": [
 		{ "naziv": "Bijenièka", "pocetni": "PMF", "zavrsni": "TrgBJJ", "vrijeme": 2.43 },
 		{ "naziv": "Srebrnjak", "pocetni": "Kvatriæ", "zavrsni": "PMF", "vrijeme": 4.1 },
-		{ "naziv": "Maksimirska", "pocetni": "TrgBJJ", "zavrsni": "Kvatriæ", "vrijeme": 4.33 },
+		{ "naziv": "Vlaška", "pocetni": "TrgBJJ", "zavrsni": "Kvatriæ", "vrijeme": 4.33 },
 		{ "naziv": "Maksimirska", "pocetni": "Kvatriæ", "zavrsni": "Maksimir", "vrijeme": 7 },
-		{ "naziv": "Ilica", "pocetni": "TrgBJJ", "zavrsni": "TrgdrFT", "vrijeme": 10.3 },
-		{ "naziv": "Ilica", "pocetni": "TrgdrFT", "c2": "Èrnomerec", "vrijeme": 5.3 },
+		{ "naziv": "Ilica1", "pocetni": "TrgBJJ", "zavrsni": "TrgdrFT", "vrijeme": 10.3 },
+		{ "naziv": "Ilica2", "pocetni": "TrgdrFT", "zavrsni": "Èrnomerec", "vrijeme": 5.3 },
 		{ "naziv": "Zrinjevac", "pocetni": "TrgBJJ", "zavrsni": "GK", "vrijeme": 5.3 },
 		{ "naziv": "Heinzelova", "pocetni": "Kvatriæ", "zavrsni": "McD", "vrijeme": 13.2 },
 		{ "naziv": "Vukovarska", "pocetni": "McD", "zavrsni": "Lisinski", "vrijeme": 13.2 },
-		{ "naziv": "Paromlinska", "pocetni": "Lisinski", "zavrsni": "McD", "vrijeme": 13.2 }
+		{ "naziv": "Paromlinska", "pocetni": "Lisinski", "zavrsni": "GK", "vrijeme": 13.2 }
 	]
 }
