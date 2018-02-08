@@ -263,7 +263,7 @@
             this.bridToolStripMenuItem.Name = "bridToolStripMenuItem";
             this.bridToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.bridToolStripMenuItem.Text = "Brid";
-            this.bridToolStripMenuItem.Click += new System.EventHandler(this.bridToolStripMenuItem_Click);
+            this.bridToolStripMenuItem.Click += new System.EventHandler(this.BridToolStripMenuItem_Click);
             // 
             // toolStripButton2
             // 
@@ -281,14 +281,14 @@
             this.najkraćiToolStripMenuItem.Name = "najkraćiToolStripMenuItem";
             this.najkraćiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.najkraćiToolStripMenuItem.Text = "Najkraći";
-            this.najkraćiToolStripMenuItem.Click += new System.EventHandler(this.najkraćiToolStripMenuItem_Click);
+            this.najkraćiToolStripMenuItem.Click += new System.EventHandler(this.NajkraćiToolStripMenuItem_Click);
             // 
             // posaoUsputToolStripMenuItem
             // 
             this.posaoUsputToolStripMenuItem.Name = "posaoUsputToolStripMenuItem";
             this.posaoUsputToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.posaoUsputToolStripMenuItem.Text = "Posao usput";
-            this.posaoUsputToolStripMenuItem.Click += new System.EventHandler(this.posaoUsputToolStripMenuItem_Click);
+            this.posaoUsputToolStripMenuItem.Click += new System.EventHandler(this.PosaoUsputToolStripMenuItem_Click);
             // 
             // toolStripButton3
             // 
@@ -298,7 +298,7 @@
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(52, 22);
             this.toolStripButton3.Text = "Pronađi";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            this.toolStripButton3.Click += new System.EventHandler(this.ToolStripButton3_Click);
             // 
             // Form1
             // 

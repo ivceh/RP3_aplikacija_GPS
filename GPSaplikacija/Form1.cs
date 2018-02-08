@@ -103,7 +103,7 @@ namespace GPSaplikacija
 
         private Button dodajBrid = new Button();
 
-        private void bridToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BridToolStripMenuItem_Click(object sender, EventArgs e)
         {
             panelSaKontrolama.Controls.Clear();
 
@@ -176,7 +176,7 @@ namespace GPSaplikacija
         private Button označiKarakteristiku = new Button();
         private Button odznačiKarakteristiku = new Button();
 
-        private void toolStripButton3_Click(object sender, EventArgs e)
+        private void ToolStripButton3_Click(object sender, EventArgs e)
         {
             panelSaKontrolama.Controls.Clear();
 
@@ -209,7 +209,7 @@ namespace GPSaplikacija
 
         private Button tražiNajkraći = new Button();
 
-        private void najkraćiToolStripMenuItem_Click(object sender, EventArgs e)
+        private void NajkraćiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             panelSaKontrolama.Controls.Clear();
 
@@ -251,7 +251,7 @@ namespace GPSaplikacija
         private TextBox unešeniPosao = new TextBox();
         private Button tražiPutUzPosao = new Button();
 
-        private void posaoUsputToolStripMenuItem_Click(object sender, EventArgs e)
+        private void PosaoUsputToolStripMenuItem_Click(object sender, EventArgs e)
         {
             panelSaKontrolama.Controls.Clear();
 
