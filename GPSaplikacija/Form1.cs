@@ -26,5 +26,16 @@ namespace GPSaplikacija
             //g.DrawLine(p, 0, 0, 100, 100);
             //g.DrawEllipse(p, 50, 100, 100, 100);
         }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            Point p = ((PictureBox)sender).PointToClient(Cursor.Position);
+            koordinatePokazivaca.Text = "(" + p.X + "," + p.Y + ")";
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            koordinatePokazivaca.Text = "";
+        }
     }
 }
