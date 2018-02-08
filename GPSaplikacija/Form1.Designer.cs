@@ -49,6 +49,7 @@
             this.gumbDesno = new System.Windows.Forms.Button();
             this.gumbDolje = new System.Windows.Forms.Button();
             this.labelOpis = new System.Windows.Forms.Label();
+            this.panelSaKontrolama = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanelDesni.SuspendLayout();
@@ -64,6 +65,7 @@
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.koordinatePokazivaca, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanelDesni, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panelSaKontrolama, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -197,13 +199,14 @@
             // čvorToolStripMenuItem
             // 
             this.čvorToolStripMenuItem.Name = "čvorToolStripMenuItem";
-            this.čvorToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.čvorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.čvorToolStripMenuItem.Text = "Čvor";
+            this.čvorToolStripMenuItem.Click += new System.EventHandler(this.čvorToolStripMenuItem_Click);
             // 
             // bridToolStripMenuItem
             // 
             this.bridToolStripMenuItem.Name = "bridToolStripMenuItem";
-            this.bridToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.bridToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.bridToolStripMenuItem.Text = "Brid";
             // 
             // toolStripButton2
@@ -284,6 +287,15 @@
             this.labelOpis.Text = "Klikom na čvor ili brid ovdje se pojavljuje opis.";
             this.labelOpis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panelSaKontrolama
+            // 
+            this.panelSaKontrolama.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSaKontrolama.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelSaKontrolama.Location = new System.Drawing.Point(3, 408);
+            this.panelSaKontrolama.Name = "panelSaKontrolama";
+            this.panelSaKontrolama.Size = new System.Drawing.Size(818, 96);
+            this.panelSaKontrolama.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,5 +343,6 @@
         private System.Windows.Forms.Button gumbDesno;
         private System.Windows.Forms.Button gumbDolje;
         private System.Windows.Forms.Label labelOpis;
+        private System.Windows.Forms.Panel panelSaKontrolama;
     }
 }
