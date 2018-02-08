@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GPSaplikacija
 {
-    class Čvor : IComparable<Čvor>
+    public class Čvor : IComparable<Čvor>
     {
         double x;
         double y;
