@@ -32,7 +32,6 @@ namespace GPSaplikacija
             koordinatePokazivaca.Text = "";
         }
 
-
         private Label unosČvoraNaslov = new Label();
         private Label tekstX = new Label();
         private Label tekstY = new Label();
@@ -40,8 +39,7 @@ namespace GPSaplikacija
         private TextBox unosČvoraY = new TextBox();
         private Button dodajČvor = new Button();
         private Button dodajČvorOdustani = new Button();
-
-        private void čvorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ČvorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             panelSaKontrolama.Controls.Clear();
 

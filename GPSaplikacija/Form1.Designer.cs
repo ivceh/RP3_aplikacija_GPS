@@ -256,7 +256,7 @@
             this.čvorToolStripMenuItem.Name = "čvorToolStripMenuItem";
             this.čvorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.čvorToolStripMenuItem.Text = "Čvor";
-            this.čvorToolStripMenuItem.Click += new System.EventHandler(this.čvorToolStripMenuItem_Click);
+            this.čvorToolStripMenuItem.Click += new System.EventHandler(this.ČvorToolStripMenuItem_Click);
             // 
             // bridToolStripMenuItem
             // 
