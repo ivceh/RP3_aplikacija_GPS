@@ -30,5 +30,15 @@ namespace GPSaplikacija
             else
                 return y.CompareTo(nekiČvor.y);
         }
+
+        public double X
+        {
+            get { return x; }
+        }
+
+        public double Y
+        {
+            get { return y; }
+        }
     }
 }

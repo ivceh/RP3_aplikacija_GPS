@@ -26,5 +26,20 @@ namespace GPSaplikacija
             else
                 return završniČvor.CompareTo(nekiBrid.završniČvor);
         }
+
+        public Čvor PočetniČvor
+        {
+            get { return početniČvor;  }
+        }
+
+        public Čvor ZavršniČvor
+        {
+            get { return završniČvor; }
+        }
+
+        public double VrijemeProlaska
+        {
+            get { return vrijemeProlaska; }
+        }
     }
 }
