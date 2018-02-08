@@ -21,6 +21,9 @@ namespace GPSaplikacija
 
         public void SkalirajMapuPoPlanu()
         {
+            double visina = pictureBox1.Height - 40;
+            double širina = pictureBox1.Width - 40;
+
             if(Plan.SkupČvorova.Any() && Plan.SkupČvorova.Count > 1)
             {
                 double minx, maxx, miny, maxy;
@@ -29,30 +32,32 @@ namespace GPSaplikacija
                 maxx = Plan.SkupČvorova.Max(a => a.X);
                 maxy = Plan.SkupČvorova.Max(a => a.Y);
 
-                if ((maxx-minx)/pictureBox1.Width > (maxy - miny) / pictureBox1.Height)
+                if ((maxx-minx)/pictureBox1.Width > (maxy - miny) / visina)
                 {
-                    xlijevi = minx;
-                    xdesni = maxx;
+                    xlijevi = minx - 20;
+                    xdesni = maxx + 20;
                     double ysrednji = (miny + maxy) / 2;
-                    double novaVisina = (maxx - minx) * pictureBox1.Height / pictureBox1.Width;
-                    ygornji = ysrednji - novaVisina / 2;
-                    ydonji = ysrednji + novaVisina / 2;
+                    double novaVisina = (maxx - minx) * visina / širina;
+                    ygornji = ysrednji - novaVisina / 2 - 20;
+                    ydonji = ysrednji + novaVisina / 2 + 20;
                 }
                 else
                 {
-                    ygornji = miny;
-                    ydonji = maxy;
+                    ygornji = miny - 20;
+                    ydonji = maxy + 20;
                     double xsrednji = (minx + maxx) / 2;
-                    double novaSirina = (maxy - miny) * pictureBox1.Width / pictureBox1.Height;
-                    xlijevi = xsrednji - novaSirina / 2;
-                    xdesni = xsrednji + novaSirina / 2;
+                    double novaSirina = (maxy - miny) * širina / visina;
+                    xlijevi = xsrednji - novaSirina / 2 - 20;
+                    xdesni = xsrednji + novaSirina / 2 + 20;
                 }
             }
         }
 
         // obrubi i sjenčanja
-        Pen pVanjska = new Pen(Color.Black, 7), pUnutarnja = new Pen(Color.LightGoldenrodYellow, 5);
-        Brush b = new SolidBrush(Color.LightYellow);
+        Pen pBridVanjska = new Pen(Color.Black, 7),
+            pBridUnutarnja = new Pen(Color.Yellow, 5),
+            pČvor = new Pen(Color.Black);
+        Brush b = new SolidBrush(Color.Orange);
 
         private void PictureBox1_Paint(object sender, PaintEventArgs e)
         {
@@ -60,7 +65,7 @@ namespace GPSaplikacija
 
             SkalirajMapuPoPlanu();
 
-            foreach (Pen p in new Pen[]{pVanjska, pUnutarnja})
+            foreach (Pen p in new Pen[]{pBridVanjska, pBridUnutarnja})
             {
                 foreach (Brid b in Plan.SkupBridova)
                 {
@@ -74,6 +79,16 @@ namespace GPSaplikacija
 
                     g.DrawLine(p, xpNaMapi, ypNaMapi, xzNaMapi, yzNaMapi);
                 }
+            }
+            
+            foreach (Čvor č in Plan.skupČvorova)
+            {
+                float xNaMapi, yNaMapi;
+                xNaMapi = (float)Skaliraj(č.X, xlijevi, xdesni, 0, pictureBox1.Width);
+                yNaMapi = (float)Skaliraj(č.Y, ygornji, ydonji, 0, pictureBox1.Height);
+
+                g.FillEllipse(b, xNaMapi - 5, yNaMapi - 5, 10, 10);
+                g.DrawEllipse(pČvor, xNaMapi - 5, yNaMapi - 5, 10, 10);
             }
         }
     }

@@ -2,25 +2,25 @@
 	"ime": "Zagreb-centar",
 	"cvorovi": [
 		{ "naziv": "PMF", "x": 460, "y": 20 },
-		{ "naziv": "Trg Bana Josipa Jelaèiæa", "x": 400, "y": 300 },
-		{ "naziv": "Kvaternikov Trg", "x": 550, "y": 300 },
+		{ "naziv": "TrgBJJ", "x": 400, "y": 300 },
+		{ "naziv": "Kvatriæ", "x": 550, "y": 300 },
 		{ "naziv": "Maksimir", "x": 700, "y": 270 },
-		{ "naziv": "Trg doktora Franje Tuðmana", "x": 220, "y": 300 },
+		{ "naziv": "TrgdrFT", "x": 220, "y": 300 },
 		{ "naziv": "Èrnomerec", "x": 50, "y": 280 },
-		{ "naziv": "Glavni Kolodvor", "x": 400, "y": 500 },
-		{ "naziv": "McDonald's", "x": 630, "y": 650 },
+		{ "naziv": "GK", "x": 400, "y": 500 },
+		{ "naziv": "McD", "x": 630, "y": 650 },
 		{ "naziv": "Lisinski", "x": 400, "y": 660 }
 	],
 	"bridovi": [
-		{ "naziv": "Bijenièka", "c1": 0, "c2": 1, "vrijeme": 2.43 },
-		{ "naziv": "Srebrnjak", "c1": 2, "c2": 0, "vrijeme": 4.1 },
-		{ "naziv": "Maksimirska", "c1": 1, "c2": 2, "vrijeme": 4.33 },
-		{ "naziv": "Maksimirska", "c1": 2, "c2": 3, "vrijeme": 7 },
-		{ "naziv": "Ilica", "c1": 1, "c2": 4, "vrijeme": 10.3 },
-		{ "naziv": "Ilica", "c1": 4, "c2": 5, "vrijeme": 5.3 },
-		{ "naziv": "Zrinjevac", "c1": 1, "c2": 6, "vrijeme": 5.3 },
-		{ "naziv": "Heinzelova", "c1": 2, "c2": 7, "vrijeme": 13.2 },
-		{ "naziv": "Vukovarska", "c1": 7, "c2": 8, "vrijeme": 13.2 },
-		{ "naziv": "Paromlinska", "c1": 8, "c2": 6, "vrijeme": 13.2 }
+		{ "naziv": "Bijenièka", "pocetni": "PMF", "zavrsni": "TrgBJJ", "vrijeme": 2.43 },
+		{ "naziv": "Srebrnjak", "pocetni": "Kvatriæ", "zavrsni": "PMF", "vrijeme": 4.1 },
+		{ "naziv": "Maksimirska", "pocetni": "TrgBJJ", "zavrsni": "Kvatriæ", "vrijeme": 4.33 },
+		{ "naziv": "Maksimirska", "pocetni": "Kvatriæ", "zavrsni": "Maksimir", "vrijeme": 7 },
+		{ "naziv": "Ilica", "pocetni": "TrgBJJ", "zavrsni": "TrgdrFT", "vrijeme": 10.3 },
+		{ "naziv": "Ilica", "pocetni": "TrgdrFT", "c2": "Èrnomerec", "vrijeme": 5.3 },
+		{ "naziv": "Zrinjevac", "pocetni": "TrgBJJ", "zavrsni": "GK", "vrijeme": 5.3 },
+		{ "naziv": "Heinzelova", "pocetni": "Kvatriæ", "zavrsni": "McD", "vrijeme": 13.2 },
+		{ "naziv": "Vukovarska", "pocetni": "McD", "zavrsni": "Lisinski", "vrijeme": 13.2 },
+		{ "naziv": "Paromlinska", "pocetni": "Lisinski", "zavrsni": "McD", "vrijeme": 13.2 }
 	]
 }

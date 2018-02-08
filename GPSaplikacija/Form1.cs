@@ -33,15 +33,21 @@ namespace GPSaplikacija
         }
 
 
+
         private Label labelNaslov = new Label();
+
+        private Label unosČvoraNaslov = new Label();
+
         private Label tekstX = new Label();
         private Label tekstY = new Label();
         private TextBox unosČvoraX = new TextBox();
         private TextBox unosČvoraY = new TextBox();
         private Button dodajČvor = new Button();
+
         private Button gumbOdustani = new Button();
 
-        private void čvorToolStripMenuItem_Click(object sender, EventArgs e)
+        private Button dodajČvorOdustani = new Button();
+        private void ČvorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             panelSaKontrolama.Controls.Clear();
 
