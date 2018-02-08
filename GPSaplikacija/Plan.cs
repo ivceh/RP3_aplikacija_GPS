@@ -50,7 +50,7 @@ namespace GPSaplikacija
 
         public static List<Brid> SkupBridova
         {
-            get { return SkupBridova; }
+            get { return skupBridova; }
         }
     }
 }
