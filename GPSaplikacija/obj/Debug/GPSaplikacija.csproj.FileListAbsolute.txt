@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Ivan\AppData\Local\Temporary Projects\GPSaplikacija\bin\Debug\GPSaplikacija.exe.config
 C:\Users\Ivan\AppData\Local\Temporary Projects\GPSaplikacija\bin\Debug\GPSaplikacija.exe
 C:\Users\Ivan\AppData\Local\Temporary Projects\GPSaplikacija\bin\Debug\GPSaplikacija.pdb
@@ -16,3 +17,17 @@ C:\Users\Ivan\Desktop\faks\rp3\RP3_aplikacija_GPS\GPSaplikacija\obj\Debug\GPSapl
 C:\Users\Ivan\Desktop\faks\rp3\RP3_aplikacija_GPS\GPSaplikacija\obj\Debug\GPSaplikacija.csproj.GenerateResource.Cache
 C:\Users\Ivan\Desktop\faks\rp3\RP3_aplikacija_GPS\GPSaplikacija\obj\Debug\GPSaplikacija.exe
 C:\Users\Ivan\Desktop\faks\rp3\RP3_aplikacija_GPS\GPSaplikacija\obj\Debug\GPSaplikacija.pdb
+C:\Users\sehorva\Documents\GitHub\RP3_aplikacija_GPS\GPSaplikacija\bin\Debug\GPSaplikacija.exe.config
+C:\Users\sehorva\Documents\GitHub\RP3_aplikacija_GPS\GPSaplikacija\obj\Debug\GPSaplikacija.exe
+C:\Users\sehorva\Documents\GitHub\RP3_aplikacija_GPS\GPSaplikacija\obj\Debug\GPSaplikacija.pdb
+C:\Users\sehorva\Documents\GitHub\RP3_aplikacija_GPS\GPSaplikacija\bin\Debug\GPSaplikacija.exe
+C:\Users\sehorva\Documents\GitHub\RP3_aplikacija_GPS\GPSaplikacija\bin\Debug\GPSaplikacija.pdb
+C:\Users\sehorva\Documents\GitHub\RP3_aplikacija_GPS\GPSaplikacija\obj\Debug\GPSaplikacija.csprojResolveAssemblyReference.cache
+C:\Users\sehorva\Documents\GitHub\RP3_aplikacija_GPS\GPSaplikacija\obj\Debug\GPSaplikacija.Form1.resources
+C:\Users\sehorva\Documents\GitHub\RP3_aplikacija_GPS\GPSaplikacija\obj\Debug\GPSaplikacija.Properties.Resources.resources
+C:\Users\sehorva\Documents\GitHub\RP3_aplikacija_GPS\GPSaplikacija\obj\Debug\GPSaplikacija.csproj.GenerateResource.Cache
+=======
+C:\Users\eivaceh\Documents\Visual Studio 2015\Projects\faks\RP3_aplikacija_GPS\GPSaplikacija\bin\Debug\GPSaplikacija.exe.config
+C:\Users\eivaceh\Documents\Visual Studio 2015\Projects\faks\RP3_aplikacija_GPS\GPSaplikacija\obj\Debug\GPSaplikacija.exe
+C:\Users\eivaceh\Documents\Visual Studio 2015\Projects\faks\RP3_aplikacija_GPS\GPSaplikacija\obj\Debug\GPSaplikacija.pdb
+>>>>>>> d5f7d18f3fa902fef1e2f9fdf07e91c1abe4ab32
