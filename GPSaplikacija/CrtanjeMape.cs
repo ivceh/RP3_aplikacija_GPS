@@ -66,8 +66,6 @@ namespace GPSaplikacija
         {
             Graphics g = e.Graphics;
 
-            SkalirajMapuPoPlanu();
-
             foreach (Pen p in new Pen[]{pBridVanjska, pBridUnutarnja})
             {
                 foreach (Brid b in Plan.SkupBridova.Values)
@@ -93,6 +91,68 @@ namespace GPSaplikacija
                 g.FillEllipse(b, xNaMapi - 5, yNaMapi - 5, 10, 10);
                 g.DrawEllipse(pČvor, xNaMapi - 5, yNaMapi - 5, 10, 10);
             }
+        }
+
+        private void gumbSmanji_Click(object sender, EventArgs e)
+        {
+            double razlikaHorizontalno = 0.1 * (xdesni - xlijevi);
+            xlijevi -= razlikaHorizontalno;
+            xdesni += razlikaHorizontalno;
+
+            double razlikaVertikalno = 0.1 * (ydonji - ygornji);
+            ygornji -= razlikaVertikalno;
+            ydonji += razlikaVertikalno;
+
+            pictureBox1.Refresh();
+        }
+
+        private void gumbPovecaj_Click(object sender, EventArgs e)
+        {
+            double razlikaHorizontalno = 0.1 * (xdesni - xlijevi);
+            xlijevi += razlikaHorizontalno;
+            xdesni -= razlikaHorizontalno;
+
+            double razlikaVertikalno = 0.1 * (ydonji - ygornji);
+            ygornji += razlikaVertikalno;
+            ydonji -= razlikaVertikalno;
+
+            pictureBox1.Refresh();
+        }
+
+        private void gumbLijevo_Click(object sender, EventArgs e)
+        {
+            double razlikaHorizontalno = 0.1 * (xdesni - xlijevi);
+            xlijevi -= razlikaHorizontalno;
+            xdesni -= razlikaHorizontalno;
+
+            pictureBox1.Refresh();
+        }
+
+        private void gumbDesno_Click(object sender, EventArgs e)
+        {
+            double razlikaHorizontalno = 0.1 * (xdesni - xlijevi);
+            xlijevi += razlikaHorizontalno;
+            xdesni += razlikaHorizontalno;
+
+            pictureBox1.Refresh();
+        }
+
+        private void gumbGore_Click(object sender, EventArgs e)
+        {
+            double razlikaVertikalno = 0.1 * (ydonji - ygornji);
+            ygornji -= razlikaVertikalno;
+            ydonji -= razlikaVertikalno;
+
+            pictureBox1.Refresh();
+        }
+
+        private void gumbDolje_Click(object sender, EventArgs e)
+        {
+            double razlikaVertikalno = 0.1 * (ydonji - ygornji);
+            ygornji += razlikaVertikalno;
+            ydonji += razlikaVertikalno;
+
+            pictureBox1.Refresh();
         }
     }
 }

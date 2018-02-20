@@ -130,6 +130,7 @@
             this.gumbSmanji.Size = new System.Drawing.Size(70, 50);
             this.gumbSmanji.TabIndex = 0;
             this.gumbSmanji.UseVisualStyleBackColor = false;
+            this.gumbSmanji.Click += new System.EventHandler(this.gumbSmanji_Click);
             // 
             // gumbPovecaj
             // 
@@ -142,6 +143,7 @@
             this.gumbPovecaj.Size = new System.Drawing.Size(70, 50);
             this.gumbPovecaj.TabIndex = 1;
             this.gumbPovecaj.UseVisualStyleBackColor = false;
+            this.gumbPovecaj.Click += new System.EventHandler(this.gumbPovecaj_Click);
             // 
             // tableLayoutPanelStrelice
             // 
@@ -174,6 +176,7 @@
             this.gumbGore.Size = new System.Drawing.Size(58, 41);
             this.gumbGore.TabIndex = 0;
             this.gumbGore.UseVisualStyleBackColor = true;
+            this.gumbGore.Click += new System.EventHandler(this.gumbGore_Click);
             // 
             // gumbLijevo
             // 
@@ -185,6 +188,7 @@
             this.gumbLijevo.Size = new System.Drawing.Size(58, 41);
             this.gumbLijevo.TabIndex = 1;
             this.gumbLijevo.UseVisualStyleBackColor = true;
+            this.gumbLijevo.Click += new System.EventHandler(this.gumbLijevo_Click);
             // 
             // gumbDesno
             // 
@@ -196,6 +200,7 @@
             this.gumbDesno.Size = new System.Drawing.Size(60, 41);
             this.gumbDesno.TabIndex = 2;
             this.gumbDesno.UseVisualStyleBackColor = true;
+            this.gumbDesno.Click += new System.EventHandler(this.gumbDesno_Click);
             // 
             // gumbDolje
             // 
@@ -207,6 +212,7 @@
             this.gumbDolje.Size = new System.Drawing.Size(58, 43);
             this.gumbDolje.TabIndex = 3;
             this.gumbDolje.UseVisualStyleBackColor = true;
+            this.gumbDolje.Click += new System.EventHandler(this.gumbDolje_Click);
             // 
             // labelOpis
             // 
@@ -279,14 +285,14 @@
             // najkraćiToolStripMenuItem
             // 
             this.najkraćiToolStripMenuItem.Name = "najkraćiToolStripMenuItem";
-            this.najkraćiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.najkraćiToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.najkraćiToolStripMenuItem.Text = "Najkraći";
             this.najkraćiToolStripMenuItem.Click += new System.EventHandler(this.NajkraćiToolStripMenuItem_Click);
             // 
             // posaoUsputToolStripMenuItem
             // 
             this.posaoUsputToolStripMenuItem.Name = "posaoUsputToolStripMenuItem";
-            this.posaoUsputToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.posaoUsputToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.posaoUsputToolStripMenuItem.Text = "Posao usput";
             this.posaoUsputToolStripMenuItem.Click += new System.EventHandler(this.PosaoUsputToolStripMenuItem_Click);
             // 
