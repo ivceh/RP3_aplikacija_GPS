@@ -93,62 +93,62 @@ namespace GPSaplikacija
             }
         }
 
-        private void gumbSmanji_Click(object sender, EventArgs e)
+        private void GumbSmanji_Click(object sender, EventArgs e)
         {
-            double razlikaHorizontalno = 0.1 * (xdesni - xlijevi);
+            double razlikaHorizontalno = 0.125 * (xdesni - xlijevi);
             xlijevi -= razlikaHorizontalno;
             xdesni += razlikaHorizontalno;
 
-            double razlikaVertikalno = 0.1 * (ydonji - ygornji);
+            double razlikaVertikalno = 0.125 * (ydonji - ygornji);
             ygornji -= razlikaVertikalno;
             ydonji += razlikaVertikalno;
 
             pictureBox1.Refresh();
         }
 
-        private void gumbPovecaj_Click(object sender, EventArgs e)
+        private void GumbPovecaj_Click(object sender, EventArgs e)
         {
-            double razlikaHorizontalno = 0.1 * (xdesni - xlijevi);
+            double razlikaHorizontalno = 0.125 * (xdesni - xlijevi);
             xlijevi += razlikaHorizontalno;
             xdesni -= razlikaHorizontalno;
 
-            double razlikaVertikalno = 0.1 * (ydonji - ygornji);
+            double razlikaVertikalno = 0.125 * (ydonji - ygornji);
             ygornji += razlikaVertikalno;
             ydonji -= razlikaVertikalno;
 
             pictureBox1.Refresh();
         }
 
-        private void gumbLijevo_Click(object sender, EventArgs e)
+        private void GumbLijevo_Click(object sender, EventArgs e)
         {
-            double razlikaHorizontalno = 0.1 * (xdesni - xlijevi);
+            double razlikaHorizontalno = 0.125 * (xdesni - xlijevi);
             xlijevi -= razlikaHorizontalno;
             xdesni -= razlikaHorizontalno;
 
             pictureBox1.Refresh();
         }
 
-        private void gumbDesno_Click(object sender, EventArgs e)
+        private void GumbDesno_Click(object sender, EventArgs e)
         {
-            double razlikaHorizontalno = 0.1 * (xdesni - xlijevi);
+            double razlikaHorizontalno = 0.125 * (xdesni - xlijevi);
             xlijevi += razlikaHorizontalno;
             xdesni += razlikaHorizontalno;
 
             pictureBox1.Refresh();
         }
 
-        private void gumbGore_Click(object sender, EventArgs e)
+        private void GumbGore_Click(object sender, EventArgs e)
         {
-            double razlikaVertikalno = 0.1 * (ydonji - ygornji);
+            double razlikaVertikalno = 0.125 * (ydonji - ygornji);
             ygornji -= razlikaVertikalno;
             ydonji -= razlikaVertikalno;
 
             pictureBox1.Refresh();
         }
 
-        private void gumbDolje_Click(object sender, EventArgs e)
+        private void GumbDolje_Click(object sender, EventArgs e)
         {
-            double razlikaVertikalno = 0.1 * (ydonji - ygornji);
+            double razlikaVertikalno = 0.125 * (ydonji - ygornji);
             ygornji += razlikaVertikalno;
             ydonji += razlikaVertikalno;
 

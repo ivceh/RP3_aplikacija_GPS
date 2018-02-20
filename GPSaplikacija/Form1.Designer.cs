@@ -85,6 +85,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(818, 374);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBox1_Paint);
             this.pictureBox1.MouseLeave += new System.EventHandler(this.PictureBox1_MouseLeave);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PictureBox1_MouseMove);
@@ -130,7 +131,7 @@
             this.gumbSmanji.Size = new System.Drawing.Size(70, 50);
             this.gumbSmanji.TabIndex = 0;
             this.gumbSmanji.UseVisualStyleBackColor = false;
-            this.gumbSmanji.Click += new System.EventHandler(this.gumbSmanji_Click);
+            this.gumbSmanji.Click += new System.EventHandler(this.GumbSmanji_Click);
             // 
             // gumbPovecaj
             // 
@@ -143,7 +144,7 @@
             this.gumbPovecaj.Size = new System.Drawing.Size(70, 50);
             this.gumbPovecaj.TabIndex = 1;
             this.gumbPovecaj.UseVisualStyleBackColor = false;
-            this.gumbPovecaj.Click += new System.EventHandler(this.gumbPovecaj_Click);
+            this.gumbPovecaj.Click += new System.EventHandler(this.GumbPovecaj_Click);
             // 
             // tableLayoutPanelStrelice
             // 
@@ -176,7 +177,7 @@
             this.gumbGore.Size = new System.Drawing.Size(58, 41);
             this.gumbGore.TabIndex = 0;
             this.gumbGore.UseVisualStyleBackColor = true;
-            this.gumbGore.Click += new System.EventHandler(this.gumbGore_Click);
+            this.gumbGore.Click += new System.EventHandler(this.GumbGore_Click);
             // 
             // gumbLijevo
             // 
@@ -188,7 +189,7 @@
             this.gumbLijevo.Size = new System.Drawing.Size(58, 41);
             this.gumbLijevo.TabIndex = 1;
             this.gumbLijevo.UseVisualStyleBackColor = true;
-            this.gumbLijevo.Click += new System.EventHandler(this.gumbLijevo_Click);
+            this.gumbLijevo.Click += new System.EventHandler(this.GumbLijevo_Click);
             // 
             // gumbDesno
             // 
@@ -200,7 +201,7 @@
             this.gumbDesno.Size = new System.Drawing.Size(60, 41);
             this.gumbDesno.TabIndex = 2;
             this.gumbDesno.UseVisualStyleBackColor = true;
-            this.gumbDesno.Click += new System.EventHandler(this.gumbDesno_Click);
+            this.gumbDesno.Click += new System.EventHandler(this.GumbDesno_Click);
             // 
             // gumbDolje
             // 
@@ -212,7 +213,7 @@
             this.gumbDolje.Size = new System.Drawing.Size(58, 43);
             this.gumbDolje.TabIndex = 3;
             this.gumbDolje.UseVisualStyleBackColor = true;
-            this.gumbDolje.Click += new System.EventHandler(this.gumbDolje_Click);
+            this.gumbDolje.Click += new System.EventHandler(this.GumbDolje_Click);
             // 
             // labelOpis
             // 

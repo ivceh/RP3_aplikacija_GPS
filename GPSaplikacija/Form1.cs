@@ -296,5 +296,12 @@ namespace GPSaplikacija
             gumbOdustani.Text = "ODUSTANI";
             gumbOdustani.Location = new Point(700, 50);
         }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+            Point p = ((PictureBox)sender).PointToClient(Cursor.Position);
+            double x = Skaliraj(p.X, 0, pictureBox1.Width, xlijevi, xdesni),
+                   y = Skaliraj(p.Y, 0, pictureBox1.Height, ygornji, ydonji);
+        }
     }
 }
