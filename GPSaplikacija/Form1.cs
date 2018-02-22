@@ -308,7 +308,38 @@ namespace GPSaplikacija
 
         private void dodajČvorPlanu(object sender, EventArgs e)
         {
+            System.Globalization.NumberFormatInfo info = new System.Globalization.NumberFormatInfo();
+            info.NumberDecimalSeparator = ".";
+            info.NumberGroupSeparator = ",";
+            double x = Convert.ToDouble(unosČvoraX.Text, info);
+            double y = Convert.ToDouble(unosČvoraY.Text, info);
 
+            int status = Plan.DodajČvor(x, y, unosImenaNovogČvora.Text);
+            if(status == -1)
+            {
+                MessageBox.Show("Već postoji čvor s takvim imenom! Molimo odaberite neko drugo.", 
+                    "Ime čvora zauzeto", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
+            }
+            else if(status == -2)
+            {
+                MessageBox.Show("Već postoji čvor na tim koordinatama! Molimo odaberite neku drugu koordinatu.",
+                    "Zauzete koordinate",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else if(status == 1)
+            {
+                MessageBox.Show("Uspješno dodan čvor " + unosImenaNovogČvora.Text 
+                        + ", na koordinate (" + Convert.ToDouble(unosČvoraX.Text) 
+                        + "," + Convert.ToDouble(unosČvoraY.Text) + ")",
+                    "Uspješno dodan čvor",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+
+            pictureBox1.Refresh();
         }
 
 

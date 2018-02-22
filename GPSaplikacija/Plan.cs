@@ -16,6 +16,15 @@ namespace GPSaplikacija
 
         public static int DodajČvor(double koordinataX, double koordinataY, string naziv)
         {
+            foreach (var p in SkupČvorova)
+            {
+                if (p.Value.X == koordinataX && p.Value.Y == koordinataY)
+                {
+                    Console.WriteLine("ERROR: DodajČvor(" + koordinataX + "," + koordinataY + "," + naziv + ") - čvor na tim koordinatama već postoji!");
+                    return -2;
+                }
+            }
+
             try
             {
                 skupČvorova.Add(naziv, new Čvor(naziv, koordinataX, koordinataY));
