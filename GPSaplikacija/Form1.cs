@@ -49,6 +49,7 @@ namespace GPSaplikacija
 
 
         private Font fontKojiKoristim = new Font(new FontFamily(System.Drawing.Text.GenericFontFamilies.Serif), 10);
+        private Font fontKojiNeMijenjam = new Font(new FontFamily(System.Drawing.Text.GenericFontFamilies.Serif), 10);
 
 
         public Form1()
@@ -453,20 +454,20 @@ namespace GPSaplikacija
         private void Form1_Load(object sender, EventArgs e)
         {
             labelNaslov.AutoSize = true;
-            labelNaslov.Font = fontKojiKoristim;
+            labelNaslov.Font = fontKojiNeMijenjam;
 
             tekstX.Text = "x: ";
             tekstX.AutoSize = true;
-            tekstX.Font = fontKojiKoristim;
+            tekstX.Font = fontKojiNeMijenjam;
             tekstX.Location = new Point(50, 30);
 
             tekstY.Text = "y: ";
-            tekstY.Font = fontKojiKoristim;
+            tekstY.Font = fontKojiNeMijenjam;
             tekstY.AutoSize = true;
             tekstY.Location = new Point(50, 60);
 
             unesiImeNovogČvora.Text = "Unesi ime novog čvora:";
-            unesiImeNovogČvora.Font = fontKojiKoristim;
+            unesiImeNovogČvora.Font = fontKojiNeMijenjam;
             unesiImeNovogČvora.AutoSize = true;
             unesiImeNovogČvora.Location = new Point(250, 30);
 
@@ -487,7 +488,7 @@ namespace GPSaplikacija
             gumbOdustani.Click += OčistiPanel;
 
             unesiImeNovogBrida.Text = "Unesi ime novog brida:";
-            unesiImeNovogBrida.Font = fontKojiKoristim;
+            unesiImeNovogBrida.Font = fontKojiNeMijenjam;
             unesiImeNovogBrida.AutoSize = true;
             unesiImeNovogBrida.Location = new Point(500, 20);
 
@@ -614,6 +615,30 @@ namespace GPSaplikacija
                 fs.Close();
             }
             Console.WriteLine("Snimka zaslona uspješno spremljena...");
+        }
+
+        private void formaPozadinaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.BackColor = colorDialog1.Color;
+            }
+        }
+
+        private void odaberiFontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Pokaži prozor za odabir fonta.
+            DialogResult result = fontDialog1.ShowDialog();
+            //Pogledaj je lo OK pritisnut.
+            if (result == DialogResult.OK)
+            {
+                //Dohvati font.
+                Font font = fontDialog1.Font;
+                //Postavi svojstva forme.
+                fontKojiKoristim = font;
+
+                pictureBox1.Refresh();
+            }
         }
     }
 }
