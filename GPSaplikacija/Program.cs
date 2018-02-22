@@ -19,6 +19,8 @@ namespace GPSaplikacija
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            DatabaseConnection.CheckSqlConnection();
+
             Form1 forma = new Form1();
             forma.SkalirajMapuPoPlanu();
             Application.Run(forma);

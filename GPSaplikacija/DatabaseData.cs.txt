@@ -10,6 +10,7 @@ namespace GPSaplikacija
     {
         public const string host = "host",
                             username = "username",
-                            password = "password";
+                            password = "password",
+							database = "database";
     }
 }

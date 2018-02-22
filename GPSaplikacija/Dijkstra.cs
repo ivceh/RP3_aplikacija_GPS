@@ -17,6 +17,8 @@ namespace GPSaplikacija
 
         public void nadiPutIzmedu(Čvor c1, Čvor c2)
         {
+            neprođeniČvorovi.Clear();
+
             foreach (Čvor cv in Plan.skupČvorova.Values)
             {
                 cv.udaljenostOdPocetka = Double.MaxValue;

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 //using System.Text;
 //using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
+using System.Windows.Forms;
 
 namespace GPSaplikacija
 {
@@ -134,25 +135,31 @@ namespace GPSaplikacija
                 Console.WriteLine(e);
             }
 
-            nadiNajkraciPut(skupČvorova["PMF"], skupČvorova["Crnomerec"]);
+            //nadiNajkraciPut(skupČvorova["PMF"], skupČvorova["Crnomerec"]);
         }
 
-        public static Čvor nadiNajkraciPut(Čvor c1, Čvor c2)
+        public static Čvor nadiNajkraciPut(String s1, String s2)
         {
+            Čvor c1 = skupČvorova[s1];
+            Čvor c2 = skupČvorova[s2];
+
             dijkstrinAlgoritam.nadiPutIzmedu(c1, c2);
 
-            Console.WriteLine("RJEŠENJE:");
+            String messageText = "RJEŠENJE;\n";
+
             int putID = 0;
             Čvor cc = c2;
             while (cc.bridPrethodnik != null)
             {
                 putID++;
-                Console.WriteLine(putID + ".: " + cc.bridPrethodnik);
+                messageText += (putID + ".: " + cc.bridPrethodnik + "\n");
                 cc = cc.bridPrethodnik.PočetniČvor == cc ? cc.bridPrethodnik.ZavršniČvor : cc.bridPrethodnik.PočetniČvor;
             }
 
+            MessageBox.Show(messageText,"NAJKRAĆI PUT",MessageBoxButtons.OK);
+
             return c2;
-        }
+		}
 
         public static Dictionary<string, Čvor> SkupČvorova
         {
