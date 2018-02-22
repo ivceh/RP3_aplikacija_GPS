@@ -24,10 +24,7 @@ namespace GPSaplikacija
 
         public int CompareTo(Brid nekiBrid)
         {
-            if (početniČvor.CompareTo(nekiBrid.početniČvor) != 0)
-                return početniČvor.CompareTo(nekiBrid.početniČvor);
-            else
-                return završniČvor.CompareTo(nekiBrid.završniČvor);
+            return nekiBrid.vrijemeProlaska.CompareTo(vrijemeProlaska);
         }
 
         public Čvor PočetniČvor
@@ -43,6 +40,11 @@ namespace GPSaplikacija
         public double VrijemeProlaska
         {
             get { return vrijemeProlaska; }
+        }
+
+        public override string ToString()
+        {
+            return naziv + " (" + početniČvor.ToString() + "," + završniČvor.ToString() + ")";
         }
     }
 }

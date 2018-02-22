@@ -12,6 +12,8 @@ namespace GPSaplikacija
         public static Dictionary<string, Čvor> skupČvorova = new Dictionary<string, Čvor>();
         public static Dictionary<string, Brid> skupBridova = new Dictionary<string, Brid>();
 
+        public static Dijkstra dijkstrinAlgoritam = new Dijkstra();
+
         public static void UcitajPlan(String confFile)
         {
             try
@@ -42,6 +44,13 @@ namespace GPSaplikacija
             catch (Exception e)
             {
                 Console.WriteLine(e);
+            }
+
+            Dictionary<Čvor, Čvor> rjesenje = dijkstrinAlgoritam.nadiPutIzmedu(skupČvorova["PMF"], skupČvorova["GK"]);
+            Console.WriteLine("RJEŠENJE:");
+            foreach (Čvor cv in rjesenje.Values)
+            {
+                Console.WriteLine(cv);
             }
         }
 

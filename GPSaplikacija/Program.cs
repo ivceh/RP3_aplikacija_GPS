@@ -14,7 +14,7 @@ namespace GPSaplikacija
         [STAThread]
         static void Main()
         {
-            Plan.UcitajPlan("Zagreb-centar.txt");
+            Plan.UcitajPlan("zagreb-centar.txt");
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

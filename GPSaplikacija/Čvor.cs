@@ -11,7 +11,7 @@ namespace GPSaplikacija
         public string naziv;
         double x;
         double y;
-        SortedSet<Brid> skupSusjednihBridova = new SortedSet<Brid>();
+        public SortedSet<Brid> skupSusjednihBridova = new SortedSet<Brid>();
 
         public Čvor(string naziv, double x, double y)
         {
@@ -42,6 +42,11 @@ namespace GPSaplikacija
         public double Y
         {
             get { return y; }
+        }
+
+        public override string ToString()
+        {
+            return naziv + " (" + x.ToString() + "," + y.ToString() + ")";
         }
     }
 }
