@@ -37,6 +37,71 @@ namespace GPSaplikacija
             }
         }
 
+
+        public static string DodajBrid(string naziv, string početni, string završni, double vrijeme)
+        {
+            string poruka = ""; 
+            if(početni == završni)
+            {
+                poruka = "Za brid mi trebaju dva različita čvora!";
+                return poruka;
+            }
+
+            Čvor početniČvor = new Čvor("", 0, 0);
+            Čvor završniČvor = new Čvor("", 0, 0);
+
+            //nađi početni i završni čvor
+            bool našaoPrvi = false, našaoDrugi = false;
+            foreach(var p in skupČvorova)
+            {
+                if(p.Key == početni)
+                {
+                    našaoPrvi = true;
+                    početniČvor = p.Value;
+                }
+                else if(p.Key == završni)
+                {
+                    našaoDrugi = true;
+                    završniČvor = p.Value;
+                }
+            }
+
+            if(našaoPrvi == false)
+            {
+                poruka = "Prvi čvor ne postoji (krivi unos)!";
+            }
+            else if(našaoDrugi == false)
+            {
+                poruka = "Drugi čvor ne postoji (krivi unos)!";
+            }
+            else
+            {
+                foreach(var p in skupBridova)
+                {
+                    //p.Value je tipa Brid
+                    if (p.Value.PočetniČvor.naziv == početni && p.Value.ZavršniČvor.naziv == završni)
+                    {
+                        poruka = "Brid već postoji! Molimo dodajte neki drugi.";
+                        return poruka;
+                    } 
+                }
+
+                try
+                {
+                    skupBridova.Add(naziv, new Brid(naziv, početniČvor, završniČvor, vrijeme));
+                    poruka = "Uspješno dodan brid od " + početni + " do " + završni + ".";
+                }
+                catch (ArgumentException)
+                {
+                    poruka = "Već postoji brid s tim nazivom! Molimo odaberite drugi naziv.";
+                }
+
+            }
+
+            return poruka;
+        }
+
+
         public static void UcitajPlan(String confFile)
         {
             try

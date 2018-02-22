@@ -343,6 +343,32 @@ namespace GPSaplikacija
         }
 
 
+        private void DodajBridPlanu(object sender, EventArgs e)
+        {
+            string defaultni = "- odabrani čvor: ";
+
+            double vrijeme = Convert.ToDouble(unosVremenaSat.Text) * 3600
+                + Convert.ToDouble(unosVremenaMinuta.Text) * 60
+                + Convert.ToDouble(unosVremenaSekundi.Text);
+            string naziv = unosImenaNovogBrida.Text;
+            if(naziv == "")
+            {
+                MessageBox.Show("Niste unijeli ime novog brida!", "Unesite ime brida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(odabraniPočetniObavijest.Text.Substring(defaultni.Length) == "xxxxxxxxxx")
+            {
+                MessageBox.Show("Niste odabrali početni vrh!", "Odaberite početni vrh", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (odabraniZavršniObavijest.Text.Substring(defaultni.Length) == "xxxxxxxxxx")
+            {
+                MessageBox.Show("Niste odabrali završni vrh!", "Odaberite završni vrh", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string poruka = Plan.DodajBrid(naziv, odabraniPočetniObavijest.Text.Substring(defaultni.Length), odabraniZavršniObavijest.Text.Substring(defaultni.Length), vrijeme);
+                MessageBox.Show(poruka, "Poruka", MessageBoxButtons.OK);
+            }
+        }
 
 
 
@@ -448,6 +474,7 @@ namespace GPSaplikacija
 
             dodajBrid.Text = "DODAJ";
             dodajBrid.Location = new Point(700, 20);
+            dodajBrid.Click += DodajBridPlanu;
 
             unesiteKarakteristikuOpis.Text = "Unesite karakteristiku koja će biti označena na karti: ";
             unesiteKarakteristikuOpis.AutoSize = true;

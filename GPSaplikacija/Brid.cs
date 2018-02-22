@@ -11,7 +11,7 @@ namespace GPSaplikacija
         string naziv;
         Čvor početniČvor;
         Čvor završniČvor;
-        double vrijemeProlaska;
+        double vrijemeProlaska; //u sekundama
 
         public Brid(string naziv, Čvor početni, Čvor završni, double vrijeme)
         {
