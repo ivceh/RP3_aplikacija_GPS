@@ -3,23 +3,23 @@
 	"cvorovi": [
 		{ "naziv": "PMF", "x": 460, "y": 20 },
 		{ "naziv": "TrgBJJ", "x": 400, "y": 300 },
-		{ "naziv": "Kvatriæ", "x": 550, "y": 300 },
+		{ "naziv": "Kvatric", "x": 550, "y": 300 },
 		{ "naziv": "Maksimir", "x": 700, "y": 270 },
 		{ "naziv": "TrgdrFT", "x": 220, "y": 300 },
-		{ "naziv": "Èrnomerec", "x": 50, "y": 280 },
+		{ "naziv": "Crnomerec", "x": 50, "y": 280 },
 		{ "naziv": "GK", "x": 400, "y": 500 },
 		{ "naziv": "McD", "x": 630, "y": 650 },
 		{ "naziv": "Lisinski", "x": 400, "y": 660 }
 	],
 	"bridovi": [
-		{ "naziv": "Bijenièka", "pocetni": "PMF", "zavrsni": "TrgBJJ", "vrijeme": 2.43 },
-		{ "naziv": "Srebrnjak", "pocetni": "Kvatriæ", "zavrsni": "PMF", "vrijeme": 4.1 },
-		{ "naziv": "Vlaška", "pocetni": "TrgBJJ", "zavrsni": "Kvatriæ", "vrijeme": 4.33 },
-		{ "naziv": "Maksimirska", "pocetni": "Kvatriæ", "zavrsni": "Maksimir", "vrijeme": 7 },
+		{ "naziv": "Bijenicka", "pocetni": "PMF", "zavrsni": "TrgBJJ", "vrijeme": 2.43 },
+		{ "naziv": "Srebrnjak", "pocetni": "Kvatric", "zavrsni": "PMF", "vrijeme": 4.1 },
+		{ "naziv": "Vlaska", "pocetni": "TrgBJJ", "zavrsni": "Kvatric", "vrijeme": 4.33 },
+		{ "naziv": "Maksimirska", "pocetni": "Kvatric", "zavrsni": "Maksimir", "vrijeme": 7 },
 		{ "naziv": "Ilica1", "pocetni": "TrgBJJ", "zavrsni": "TrgdrFT", "vrijeme": 10.3 },
-		{ "naziv": "Ilica2", "pocetni": "TrgdrFT", "zavrsni": "Èrnomerec", "vrijeme": 5.3 },
+		{ "naziv": "Ilica2", "pocetni": "TrgdrFT", "zavrsni": "Crnomerec", "vrijeme": 5.3 },
 		{ "naziv": "Zrinjevac", "pocetni": "TrgBJJ", "zavrsni": "GK", "vrijeme": 5.3 },
-		{ "naziv": "Heinzelova", "pocetni": "Kvatriæ", "zavrsni": "McD", "vrijeme": 13.2 },
+		{ "naziv": "Heinzelova", "pocetni": "Kvatric", "zavrsni": "McD", "vrijeme": 13.2 },
 		{ "naziv": "Vukovarska", "pocetni": "McD", "zavrsni": "Lisinski", "vrijeme": 13.2 },
 		{ "naziv": "Paromlinska", "pocetni": "Lisinski", "zavrsni": "GK", "vrijeme": 13.2 }
 	]

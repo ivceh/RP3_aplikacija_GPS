@@ -14,6 +14,20 @@ namespace GPSaplikacija
 
         public static Dijkstra dijkstrinAlgoritam = new Dijkstra();
 
+        public static int DodajČvor(double koordinataX, double koordinataY, string naziv)
+        {
+            try
+            {
+                skupČvorova.Add(naziv, new Čvor(naziv, koordinataX, koordinataY));
+                return 1;
+            }
+            catch (ArgumentException)
+            {
+                Console.WriteLine("ERROR: DodajČvor("+koordinataX+","+koordinataY+","+naziv+") - čvor s tim nazivom već postoji!");
+                return -1;
+            }
+        }
+
         public static void UcitajPlan(String confFile)
         {
             try

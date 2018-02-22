@@ -297,6 +297,11 @@ namespace GPSaplikacija
             }
         }
 
+        private void dodajČvorPlanu(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 
@@ -340,7 +345,7 @@ namespace GPSaplikacija
 
             dodajČvor.Text = "DODAJ";
             dodajČvor.Location = new Point(300, 30);
-            //dodajČvor.Click += dodajCv;
+            dodajČvor.Click += dodajČvorPlanu;
 
             gumbOdustani.Text = "ODUSTANI";
             gumbOdustani.Click += OčistiPanel;
