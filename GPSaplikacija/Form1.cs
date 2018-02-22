@@ -303,5 +303,34 @@ namespace GPSaplikacija
             double x = Skaliraj(p.X, 0, pictureBox1.Width, xlijevi, xdesni),
                    y = Skaliraj(p.Y, 0, pictureBox1.Height, ygornji, ydonji);
         }
+
+        private void bojaCesteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pBridUnutarnja = new Pen(colorDialog1.Color, 5);
+                pictureBox1.Refresh();
+            }
+        }
+
+        private void bojaČvorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                b = new SolidBrush(colorDialog1.Color);
+                pictureBox1.Refresh();
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var result = MessageBox.Show("Jeste li sigurni da želite zatvoriti aplikaciju?",
+                                         "Zatvaranje GPS-a",
+                                         MessageBoxButtons.YesNo,
+                                         MessageBoxIcon.Question);
+
+            if (result == DialogResult.No)
+                e.Cancel = true;
+        }
     }
 }

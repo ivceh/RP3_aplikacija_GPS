@@ -50,6 +50,10 @@
             this.najkraćiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.posaoUsputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.OdaberiBoje = new System.Windows.Forms.ToolStripDropDownButton();
+            this.bojaCesteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bojaČvorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanelDesni.SuspendLayout();
@@ -242,7 +246,8 @@
             this.Dodaj.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton2,
-            this.toolStripButton3});
+            this.toolStripButton3,
+            this.OdaberiBoje});
             this.Dodaj.Location = new System.Drawing.Point(0, 0);
             this.Dodaj.Name = "Dodaj";
             this.Dodaj.Size = new System.Drawing.Size(1030, 25);
@@ -256,19 +261,21 @@
             this.bridToolStripMenuItem});
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(51, 22);
-            this.toolStripButton1.Text = "Dodaj";
+            this.toolStripButton1.Text = "&Dodaj";
             // 
             // čvorToolStripMenuItem
             // 
             this.čvorToolStripMenuItem.Name = "čvorToolStripMenuItem";
-            this.čvorToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.čvorToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
+            this.čvorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.čvorToolStripMenuItem.Text = "Čvor";
             this.čvorToolStripMenuItem.Click += new System.EventHandler(this.ČvorToolStripMenuItem_Click);
             // 
             // bridToolStripMenuItem
             // 
             this.bridToolStripMenuItem.Name = "bridToolStripMenuItem";
-            this.bridToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.bridToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
+            this.bridToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.bridToolStripMenuItem.Text = "Brid";
             this.bridToolStripMenuItem.Click += new System.EventHandler(this.BridToolStripMenuItem_Click);
             // 
@@ -281,19 +288,22 @@
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(66, 22);
-            this.toolStripButton2.Text = "Nađi put";
+            this.toolStripButton2.Text = "&Nađi put";
             // 
             // najkraćiToolStripMenuItem
             // 
             this.najkraćiToolStripMenuItem.Name = "najkraćiToolStripMenuItem";
-            this.najkraćiToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.najkraćiToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.najkraćiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.najkraćiToolStripMenuItem.Text = "Najkraći";
             this.najkraćiToolStripMenuItem.Click += new System.EventHandler(this.NajkraćiToolStripMenuItem_Click);
             // 
             // posaoUsputToolStripMenuItem
             // 
             this.posaoUsputToolStripMenuItem.Name = "posaoUsputToolStripMenuItem";
-            this.posaoUsputToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.posaoUsputToolStripMenuItem.ShortcutKeyDisplayString = "";
+            this.posaoUsputToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.posaoUsputToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.posaoUsputToolStripMenuItem.Text = "Posao usput";
             this.posaoUsputToolStripMenuItem.Click += new System.EventHandler(this.PosaoUsputToolStripMenuItem_Click);
             // 
@@ -304,8 +314,38 @@
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(52, 22);
-            this.toolStripButton3.Text = "Pronađi";
+            this.toolStripButton3.Text = "&Pronađi";
             this.toolStripButton3.Click += new System.EventHandler(this.ToolStripButton3_Click);
+            // 
+            // OdaberiBoje
+            // 
+            this.OdaberiBoje.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.OdaberiBoje.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bojaCesteToolStripMenuItem,
+            this.bojaČvorToolStripMenuItem});
+            this.OdaberiBoje.Image = ((System.Drawing.Image)(resources.GetObject("OdaberiBoje.Image")));
+            this.OdaberiBoje.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.OdaberiBoje.Name = "OdaberiBoje";
+            this.OdaberiBoje.Size = new System.Drawing.Size(88, 22);
+            this.OdaberiBoje.Text = "&Odaberi boje";
+            // 
+            // bojaCesteToolStripMenuItem
+            // 
+            this.bojaCesteToolStripMenuItem.Name = "bojaCesteToolStripMenuItem";
+            this.bojaCesteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.C)));
+            this.bojaCesteToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.bojaCesteToolStripMenuItem.Text = "Boja ceste";
+            this.bojaCesteToolStripMenuItem.Click += new System.EventHandler(this.bojaCesteToolStripMenuItem_Click);
+            // 
+            // bojaČvorToolStripMenuItem
+            // 
+            this.bojaČvorToolStripMenuItem.Name = "bojaČvorToolStripMenuItem";
+            this.bojaČvorToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.C)));
+            this.bojaČvorToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.bojaČvorToolStripMenuItem.Text = "Boja čvora";
+            this.bojaČvorToolStripMenuItem.Click += new System.EventHandler(this.bojaČvorToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -317,8 +357,10 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "GPS aplikacija";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -355,5 +397,9 @@
         private System.Windows.Forms.Button gumbDolje;
         private System.Windows.Forms.Label labelOpis;
         private System.Windows.Forms.Panel panelSaKontrolama;
+        private System.Windows.Forms.ToolStripDropDownButton OdaberiBoje;
+        private System.Windows.Forms.ToolStripMenuItem bojaCesteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bojaČvorToolStripMenuItem;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
