@@ -24,7 +24,7 @@ namespace GPSaplikacija
 
         public int CompareTo(Brid nekiBrid)
         {
-            return nekiBrid.vrijemeProlaska.CompareTo(vrijemeProlaska);
+            return vrijemeProlaska.CompareTo(nekiBrid.vrijemeProlaska);
         }
 
         public Čvor PočetniČvor

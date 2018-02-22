@@ -13,6 +13,10 @@ namespace GPSaplikacija
         double y;
         public SortedSet<Brid> skupSusjednihBridova = new SortedSet<Brid>();
 
+        // podatci vezani uz Dijkstrino traženje
+        public double udaljenostOdPocetka;
+        public Brid bridPrethodnik;
+
         public Čvor(string naziv, double x, double y)
         {
             this.naziv = naziv;
@@ -28,10 +32,7 @@ namespace GPSaplikacija
 
         public int CompareTo(Čvor nekiČvor)
         {
-            if (x.CompareTo(nekiČvor.x) != 0)
-                return x.CompareTo(nekiČvor.x);
-            else
-                return y.CompareTo(nekiČvor.y);
+            return udaljenostOdPocetka.CompareTo(nekiČvor.udaljenostOdPocetka);
         }
 
         public double X
