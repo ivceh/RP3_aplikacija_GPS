@@ -332,5 +332,30 @@ namespace GPSaplikacija
             if (result == DialogResult.No)
                 e.Cancel = true;
         }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.NumPad8: // gore
+                    GumbGore_Click(sender, e);
+                    break;
+                case Keys.NumPad2: // dolje
+                    GumbDolje_Click(sender, e);
+                    break;
+                case Keys.NumPad4: // lijevo
+                    GumbLijevo_Click(sender, e);
+                    break;
+                case Keys.NumPad6: // desno
+                    GumbDesno_Click(sender, e);
+                    break;
+                case Keys.Add: // povećaj
+                    GumbPovecaj_Click(sender, e);
+                    break;
+                case Keys.Subtract: // smanji
+                    GumbSmanji_Click(sender, e);
+                    break;
+            }
+        }
     }
 }
