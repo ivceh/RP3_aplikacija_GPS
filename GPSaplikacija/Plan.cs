@@ -89,7 +89,10 @@ namespace GPSaplikacija
 
                 try
                 {
-                    skupBridova.Add(naziv, new Brid(naziv, početniČvor, završniČvor, vrijeme));
+                    Brid noviBrid;
+                    skupBridova.Add(naziv, noviBrid = new Brid(naziv, početniČvor, završniČvor, vrijeme));
+                    početniČvor.skupSusjednihBridova.Add(noviBrid);
+                    završniČvor.skupSusjednihBridova.Add(noviBrid);
                     poruka = "Uspješno dodan brid od " + početni + " do " + završni + ".";
                 }
                 catch (ArgumentException)

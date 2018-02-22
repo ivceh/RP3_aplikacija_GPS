@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Brid.cs" />
+    <Compile Include="DatabaseUpiti.cs" />
     <Compile Include="Dijkstra.cs" />
     <Compile Include="CrtanjeMape.cs">
       <SubType>Form</SubType>
