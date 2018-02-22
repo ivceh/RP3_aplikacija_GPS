@@ -71,9 +71,11 @@ namespace GPSaplikacija
 
             panelSaKontrolama.Controls.Add(unosČvoraX);
             unosČvoraX.Location = new Point(80, 30);
+            unosČvoraX.Text = "";
 
             panelSaKontrolama.Controls.Add(unosČvoraY);
             unosČvoraY.Location = new Point(80, 60);
+            unosČvoraY.Text = "";
 
             panelSaKontrolama.Controls.Add(dodajČvor);
             dodajČvor.Text = "DODAJ";
@@ -82,8 +84,13 @@ namespace GPSaplikacija
             panelSaKontrolama.Controls.Add(gumbOdustani);
             gumbOdustani.Text = "ODUSTANI";
             gumbOdustani.Location = new Point(300, 60);
+            gumbOdustani.Click += OčistiSve;
         }
 
+        private void OčistiSve(object sender, EventArgs e)
+        {
+            panelSaKontrolama.Controls.Clear();
+        }
 
         private Label odabirPočetnog = new Label();
         private Label odabirZavršnog = new Label();
@@ -139,6 +146,7 @@ namespace GPSaplikacija
 
             panelSaKontrolama.Controls.Add(unosVremenaSat);
             unosVremenaSat.Location = new Point(100, 70);
+            unosVremenaSat.Text = "";
 
             panelSaKontrolama.Controls.Add(unesiteSateObavijest);
             unesiteSateObavijest.Text = "h";
@@ -147,6 +155,7 @@ namespace GPSaplikacija
 
             panelSaKontrolama.Controls.Add(unosVremenaMinuta);
             unosVremenaMinuta.Location = new Point(220, 70);
+            unosVremenaMinuta.Text = "";
 
             panelSaKontrolama.Controls.Add(unesiteMinuteObavijest);
             unesiteMinuteObavijest.Text = "m";
@@ -155,6 +164,7 @@ namespace GPSaplikacija
 
             panelSaKontrolama.Controls.Add(unosVremenaSekundi);
             unosVremenaSekundi.Location = new Point(340, 70);
+            unosVremenaSekundi.Text = "";
 
             panelSaKontrolama.Controls.Add(unesiteSekundeObavijest);
             unesiteSekundeObavijest.Text = "s";
@@ -168,6 +178,7 @@ namespace GPSaplikacija
             panelSaKontrolama.Controls.Add(gumbOdustani);
             gumbOdustani.Text = "ODUSTANI";
             gumbOdustani.Location = new Point(700, 50);
+            gumbOdustani.Click += OčistiSve;
         }
 
         private Label unesiteKarakteristikuOpis = new Label();
@@ -192,6 +203,7 @@ namespace GPSaplikacija
 
             panelSaKontrolama.Controls.Add(unešenaKarakteristika);
             unešenaKarakteristika.Location = new Point(300, 40);
+            unešenaKarakteristika.Text = "";
 
             panelSaKontrolama.Controls.Add(označiKarakteristiku);
             označiKarakteristiku.Text = "OZNAČI";
@@ -204,6 +216,7 @@ namespace GPSaplikacija
             panelSaKontrolama.Controls.Add(gumbOdustani);
             gumbOdustani.Text = "ODUSTANI";
             gumbOdustani.Location = new Point(700, 65);
+            gumbOdustani.Click += OčistiSve;
         }
 
 
@@ -245,6 +258,7 @@ namespace GPSaplikacija
             panelSaKontrolama.Controls.Add(gumbOdustani);
             gumbOdustani.Text = "ODUSTANI";
             gumbOdustani.Location = new Point(700, 50);
+            gumbOdustani.Click += OčistiSve;
         }
 
         private Label unesitePosaoOpis = new Label();
@@ -287,6 +301,7 @@ namespace GPSaplikacija
 
             panelSaKontrolama.Controls.Add(unešeniPosao);
             unešeniPosao.Location = new Point(200, 70);
+            unešeniPosao.Text = "";
 
             panelSaKontrolama.Controls.Add(tražiPutUzPosao);
             tražiPutUzPosao.Text = "TRAŽI";
@@ -295,6 +310,7 @@ namespace GPSaplikacija
             panelSaKontrolama.Controls.Add(gumbOdustani);
             gumbOdustani.Text = "ODUSTANI";
             gumbOdustani.Location = new Point(700, 50);
+            gumbOdustani.Click += OčistiSve;
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
@@ -358,6 +374,10 @@ namespace GPSaplikacija
                     }
                 }
             }
+
+            //za unos čvora, popuniti X i Y
+            unosČvoraX.Text = x.ToString("F2", CultureInfo.GetCultureInfo("en-US"));
+            unosČvoraY.Text = y.ToString("F2", CultureInfo.GetCultureInfo("en-US"));
         }
 
         private void BojaCesteToolStripMenuItem_Click(object sender, EventArgs e)
