@@ -267,7 +267,7 @@
             // 
             this.čvorToolStripMenuItem.Name = "čvorToolStripMenuItem";
             this.čvorToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
-            this.čvorToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.čvorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.čvorToolStripMenuItem.Text = "Čvor";
             this.čvorToolStripMenuItem.Click += new System.EventHandler(this.ČvorToolStripMenuItem_Click);
             // 
@@ -275,7 +275,7 @@
             // 
             this.bridToolStripMenuItem.Name = "bridToolStripMenuItem";
             this.bridToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.bridToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.bridToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.bridToolStripMenuItem.Text = "Brid";
             this.bridToolStripMenuItem.Click += new System.EventHandler(this.BridToolStripMenuItem_Click);
             // 
@@ -362,6 +362,7 @@
             this.Name = "Form1";
             this.Text = "GPS aplikacija";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
