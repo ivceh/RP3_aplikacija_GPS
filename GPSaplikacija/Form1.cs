@@ -19,11 +19,15 @@ namespace GPSaplikacija
         private Label tekstY = new Label();
         private TextBox unosČvoraX = new TextBox();
         private TextBox unosČvoraY = new TextBox();
+        private Label unesiImeNovogČvora = new Label();
+        private TextBox unosImenaNovogČvora = new TextBox();
         private Button dodajČvor = new Button();
         private Button gumbOdustani = new Button();
         private Button dodajČvorOdustani = new Button();
         private Label odabirPočetnog = new Label();
         private Label odabirZavršnog = new Label();
+        private Label unesiImeNovogBrida = new Label();
+        private TextBox unosImenaNovogBrida = new TextBox();
         private Label odabraniPočetniObavijest = new Label();
         private Label odabraniZavršniObavijest = new Label();
         private Label unesiteVrijeme = new Label();
@@ -42,6 +46,7 @@ namespace GPSaplikacija
         private Label unesitePosaoOpis = new Label();
         private TextBox unešeniPosao = new TextBox();
         private Button tražiPutUzPosao = new Button();
+
 
         private Font fontKojiKoristim = new Font(new FontFamily(System.Drawing.Text.GenericFontFamilies.Serif), 10);
 
@@ -77,9 +82,11 @@ namespace GPSaplikacija
             panelSaKontrolama.Controls.Add(tekstY);
             panelSaKontrolama.Controls.Add(unosČvoraX);
             panelSaKontrolama.Controls.Add(unosČvoraY);
+            panelSaKontrolama.Controls.Add(unesiImeNovogČvora);
+            panelSaKontrolama.Controls.Add(unosImenaNovogČvora);
             panelSaKontrolama.Controls.Add(dodajČvor);
             panelSaKontrolama.Controls.Add(gumbOdustani);
-            gumbOdustani.Location = new Point(300, 60);
+            gumbOdustani.Location = new Point(500, 60);
         }
 
 
@@ -94,11 +101,11 @@ namespace GPSaplikacija
             panelSaKontrolama.Controls.Add(odabirPočetnog);
             odabirPočetnog.Location = new Point(5, 30);
             panelSaKontrolama.Controls.Add(odabirZavršnog);
-            odabirZavršnog.Location = new Point(400, 30);
+            odabirZavršnog.Location = new Point(250, 30);
             panelSaKontrolama.Controls.Add(odabraniPočetniObavijest);
             odabraniPočetniObavijest.Location = new Point(25, 50);
             panelSaKontrolama.Controls.Add(odabraniZavršniObavijest);
-            odabraniZavršniObavijest.Location = new Point(420, 50);
+            odabraniZavršniObavijest.Location = new Point(250, 50);
             panelSaKontrolama.Controls.Add(unesiteVrijeme);
             panelSaKontrolama.Controls.Add(unosVremenaSat);
             panelSaKontrolama.Controls.Add(unesiteSateObavijest);
@@ -106,6 +113,8 @@ namespace GPSaplikacija
             panelSaKontrolama.Controls.Add(unesiteMinuteObavijest);
             panelSaKontrolama.Controls.Add(unosVremenaSekundi);
             panelSaKontrolama.Controls.Add(unesiteSekundeObavijest);
+            panelSaKontrolama.Controls.Add(unesiImeNovogBrida);
+            panelSaKontrolama.Controls.Add(unosImenaNovogBrida);
             panelSaKontrolama.Controls.Add(dodajBrid);
             panelSaKontrolama.Controls.Add(gumbOdustani);
             gumbOdustani.Location = new Point(700, 50);
@@ -313,11 +322,13 @@ namespace GPSaplikacija
             panelSaKontrolama.Controls.Clear();
             unosČvoraX.Text = "";
             unosČvoraY.Text = "";
+            unosImenaNovogČvora.Text = "";
             unosVremenaSat.Text = "";
             unosVremenaMinuta.Text = "";
             unosVremenaSekundi.Text = "";
             unešenaKarakteristika.Text = "";
             unešeniPosao.Text = "";
+            unosImenaNovogBrida.Text = "";
         }
 
 
@@ -337,18 +348,35 @@ namespace GPSaplikacija
             tekstY.AutoSize = true;
             tekstY.Location = new Point(50, 60);
 
+            unesiImeNovogČvora.Text = "Unesi ime novog čvora:";
+            unesiImeNovogČvora.Font = fontKojiKoristim;
+            unesiImeNovogČvora.AutoSize = true;
+            unesiImeNovogČvora.Location = new Point(250, 30);
+
             unosČvoraX.Location = new Point(80, 30);
             unosČvoraX.Text = "";
 
             unosČvoraY.Location = new Point(80, 60);
             unosČvoraY.Text = "";
 
+            unosImenaNovogČvora.Location = new Point(250, 60);
+            unosImenaNovogČvora.Text = "";
+
             dodajČvor.Text = "DODAJ";
-            dodajČvor.Location = new Point(300, 30);
+            dodajČvor.Location = new Point(500, 30);
             dodajČvor.Click += dodajČvorPlanu;
 
             gumbOdustani.Text = "ODUSTANI";
             gumbOdustani.Click += OčistiPanel;
+
+            unesiImeNovogBrida.Text = "Unesi ime novog brida:";
+            unesiImeNovogBrida.Font = fontKojiKoristim;
+            unesiImeNovogBrida.AutoSize = true;
+            unesiImeNovogBrida.Location = new Point(500, 20);
+
+            unosImenaNovogBrida.Location = new Point(500, 45);
+            unosImenaNovogBrida.Width = 160;
+            unosImenaNovogBrida.Text = "";
 
             odabirPočetnog.AutoSize = true;
             odabirPočetnog.Text = "Odaberite početni čvor. (LIJEVI KLIK)";
@@ -363,28 +391,28 @@ namespace GPSaplikacija
             odabraniZavršniObavijest.AutoSize = true;
 
             unesiteVrijeme.Text = "Unesite vrijeme: ";
-            unesiteVrijeme.Location = new Point(10, 70);
+            unesiteVrijeme.Location = new Point(10, 73);
             unesiteVrijeme.AutoSize = true;
 
             unosVremenaSat.Location = new Point(100, 70);
             unosVremenaSat.Text = "";
 
             unesiteSateObavijest.Text = "h";
-            unesiteSateObavijest.Location = new Point(200, 70);
+            unesiteSateObavijest.Location = new Point(200, 73);
             unesiteSateObavijest.AutoSize = true;
 
             unosVremenaMinuta.Location = new Point(220, 70);
             unosVremenaMinuta.Text = "";
 
             unesiteMinuteObavijest.Text = "m";
-            unesiteMinuteObavijest.Location = new Point(320, 70);
+            unesiteMinuteObavijest.Location = new Point(320, 73);
             unesiteMinuteObavijest.AutoSize = true;
 
             unosVremenaSekundi.Location = new Point(340, 70);
             unosVremenaSekundi.Text = "";
 
             unesiteSekundeObavijest.Text = "s";
-            unesiteSekundeObavijest.Location = new Point(440, 70);
+            unesiteSekundeObavijest.Location = new Point(440, 73);
             unesiteSekundeObavijest.AutoSize = true;
 
             dodajBrid.Text = "DODAJ";
