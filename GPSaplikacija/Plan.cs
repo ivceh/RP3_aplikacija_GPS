@@ -13,7 +13,7 @@ namespace GPSaplikacija
         public static Dictionary<string, Čvor> skupČvorova = new Dictionary<string, Čvor>();
         public static Dictionary<string, Brid> skupBridova = new Dictionary<string, Brid>();
 
-        public static Dijkstra dijkstrinAlgoritam = new Dijkstra();
+        //public static Dijkstra dijkstrinAlgoritam = new Dijkstra();
 
         public static int DodajČvor(double koordinataX, double koordinataY, string naziv)
         {
@@ -94,7 +94,7 @@ namespace GPSaplikacija
             MessageBox.Show(messageText,"NAJKRAĆI PUT",MessageBoxButtons.OK);
 
             return c2;
-        }
+		}
 
         public static Dictionary<string, Čvor> SkupČvorova
         {
