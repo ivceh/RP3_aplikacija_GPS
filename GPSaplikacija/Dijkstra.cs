@@ -31,6 +31,12 @@ namespace GPSaplikacija
 
             while(neprođeniČvorovi.Count != 0)
             {
+                Console.WriteLine("NEPROĐENI ČVOROVI:");
+                foreach (Čvor cv in neprođeniČvorovi)
+                {
+                    Console.WriteLine(cv);
+                }
+
                 Čvor trenutni = neprođeniČvorovi.First();
                 Console.WriteLine("trenutni cvor: " + trenutni);
 
@@ -48,13 +54,17 @@ namespace GPSaplikacija
                     Čvor susjedniČvor = susjedniBrid.PočetniČvor == trenutni ? susjedniBrid.ZavršniČvor : susjedniBrid.PočetniČvor;
                     if (alt < susjedniČvor.udaljenostOdPocetka)
                     {
+                        neprođeniČvorovi.Remove(susjedniČvor);
                         susjedniČvor.udaljenostOdPocetka = alt;
                         susjedniČvor.bridPrethodnik = susjedniBrid;
+                        neprođeniČvorovi.Add(susjedniČvor);
                     }
                 }
 
                 neprođeniČvorovi.Remove(trenutni);
             }
+
+            Console.WriteLine("skup neprođenih čvorova je PRAZAN");
         }
     }
 }
