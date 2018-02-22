@@ -60,18 +60,24 @@ namespace GPSaplikacija
                 Console.WriteLine(e);
             }
 
-            Čvor c1 = skupČvorova["PMF"];
-            Čvor c2 = skupČvorova["TrgdrFT"];
+            nadiNajkraciPut(skupČvorova["PMF"], skupČvorova["Crnomerec"]);
+        }
+
+        public static Čvor nadiNajkraciPut(Čvor c1, Čvor c2)
+        {
             dijkstrinAlgoritam.nadiPutIzmedu(c1, c2);
+
             Console.WriteLine("RJEŠENJE:");
             int putID = 0;
             Čvor cc = c2;
-            while(cc.bridPrethodnik != null)
+            while (cc.bridPrethodnik != null)
             {
                 putID++;
                 Console.WriteLine(putID + ".: " + cc.bridPrethodnik);
                 cc = cc.bridPrethodnik.PočetniČvor == cc ? cc.bridPrethodnik.ZavršniČvor : cc.bridPrethodnik.PočetniČvor;
             }
+
+            return c2;
         }
 
         public static Dictionary<string, Čvor> SkupČvorova

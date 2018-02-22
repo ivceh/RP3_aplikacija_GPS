@@ -32,7 +32,14 @@ namespace GPSaplikacija
 
         public int CompareTo(Čvor nekiČvor)
         {
-            return udaljenostOdPocetka.CompareTo(nekiČvor.udaljenostOdPocetka);
+            if (udaljenostOdPocetka.CompareTo(nekiČvor.udaljenostOdPocetka) == 0)
+            {
+                return naziv.CompareTo(nekiČvor.naziv);
+            }
+            else
+            {
+                return udaljenostOdPocetka.CompareTo(nekiČvor.udaljenostOdPocetka);
+            }
         }
 
         public double X
