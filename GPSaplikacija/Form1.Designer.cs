@@ -336,7 +336,7 @@
             | System.Windows.Forms.Keys.C)));
             this.bojaCesteToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.bojaCesteToolStripMenuItem.Text = "Boja ceste";
-            this.bojaCesteToolStripMenuItem.Click += new System.EventHandler(this.bojaCesteToolStripMenuItem_Click);
+            this.bojaCesteToolStripMenuItem.Click += new System.EventHandler(this.BojaCesteToolStripMenuItem_Click);
             // 
             // bojaČvorToolStripMenuItem
             // 
@@ -345,7 +345,7 @@
             | System.Windows.Forms.Keys.C)));
             this.bojaČvorToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.bojaČvorToolStripMenuItem.Text = "Boja čvora";
-            this.bojaČvorToolStripMenuItem.Click += new System.EventHandler(this.bojaČvorToolStripMenuItem_Click);
+            this.bojaČvorToolStripMenuItem.Click += new System.EventHandler(this.BojaČvorToolStripMenuItem_Click);
             // 
             // Form1
             // 

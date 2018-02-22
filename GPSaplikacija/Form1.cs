@@ -304,7 +304,7 @@ namespace GPSaplikacija
                    y = Skaliraj(p.Y, 0, pictureBox1.Height, ygornji, ydonji);
         }
 
-        private void bojaCesteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BojaCesteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -313,7 +313,7 @@ namespace GPSaplikacija
             }
         }
 
-        private void bojaČvorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BojaČvorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {

@@ -60,7 +60,8 @@ namespace GPSaplikacija
         Pen pBridVanjska = new Pen(Color.Black, 7),
             pBridUnutarnja = new Pen(Color.Yellow, 5),
             pČvor = new Pen(Color.Black);
-        Brush b = new SolidBrush(Color.Orange);
+        Brush b = new SolidBrush(Color.Orange),
+              textBrush = new SolidBrush(Color.Black);
 
         private void PictureBox1_Paint(object sender, PaintEventArgs e)
         {
@@ -90,6 +91,7 @@ namespace GPSaplikacija
 
                 g.FillEllipse(b, xNaMapi - 5, yNaMapi - 5, 10, 10);
                 g.DrawEllipse(pČvor, xNaMapi - 5, yNaMapi - 5, 10, 10);
+                g.DrawString(č.naziv, fontKojiKoristim, textBrush, xNaMapi, yNaMapi + 5);
             }
         }
 
