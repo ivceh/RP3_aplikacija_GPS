@@ -53,7 +53,9 @@
             this.OdaberiBoje = new System.Windows.Forms.ToolStripDropDownButton();
             this.bojaCesteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bojaČvorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spremanjeSnimkeZaslona = new System.Windows.Forms.ToolStripButton();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanelDesni.SuspendLayout();
@@ -247,7 +249,8 @@
             this.toolStripButton1,
             this.toolStripButton2,
             this.toolStripButton3,
-            this.OdaberiBoje});
+            this.OdaberiBoje,
+            this.spremanjeSnimkeZaslona});
             this.Dodaj.Location = new System.Drawing.Point(0, 0);
             this.Dodaj.Name = "Dodaj";
             this.Dodaj.Size = new System.Drawing.Size(1030, 25);
@@ -267,7 +270,7 @@
             // 
             this.čvorToolStripMenuItem.Name = "čvorToolStripMenuItem";
             this.čvorToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
-            this.čvorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.čvorToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.čvorToolStripMenuItem.Text = "Čvor";
             this.čvorToolStripMenuItem.Click += new System.EventHandler(this.ČvorToolStripMenuItem_Click);
             // 
@@ -275,7 +278,7 @@
             // 
             this.bridToolStripMenuItem.Name = "bridToolStripMenuItem";
             this.bridToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.bridToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bridToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.bridToolStripMenuItem.Text = "Brid";
             this.bridToolStripMenuItem.Click += new System.EventHandler(this.BridToolStripMenuItem_Click);
             // 
@@ -347,6 +350,16 @@
             this.bojaČvorToolStripMenuItem.Text = "Boja čvora";
             this.bojaČvorToolStripMenuItem.Click += new System.EventHandler(this.BojaČvorToolStripMenuItem_Click);
             // 
+            // spremanjeSnimkeZaslona
+            // 
+            this.spremanjeSnimkeZaslona.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.spremanjeSnimkeZaslona.Image = ((System.Drawing.Image)(resources.GetObject("spremanjeSnimkeZaslona.Image")));
+            this.spremanjeSnimkeZaslona.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.spremanjeSnimkeZaslona.Name = "spremanjeSnimkeZaslona";
+            this.spremanjeSnimkeZaslona.Size = new System.Drawing.Size(92, 22);
+            this.spremanjeSnimkeZaslona.Text = "&Snimka zaslona";
+            this.spremanjeSnimkeZaslona.Click += new System.EventHandler(this.spremanjeSnimkeZaslona_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -404,5 +417,7 @@
         private System.Windows.Forms.ToolStripMenuItem bojaCesteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bojaČvorToolStripMenuItem;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripButton spremanjeSnimkeZaslona;
     }
 }

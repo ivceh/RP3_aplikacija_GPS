@@ -563,5 +563,57 @@ namespace GPSaplikacija
             tražiPutUzPosao.Text = "TRAŽI";
             tražiPutUzPosao.Location = new Point(700, 20);
         }
+
+        private void spremanjeSnimkeZaslona_Click(object sender, EventArgs e)
+        {
+            Bitmap memoryImage;
+            //slika je dimenzija koje ima forma (jer želimo snimak forme)
+            memoryImage = new Bitmap(this.Width, this.Height);
+            Size s = new Size(memoryImage.Width, memoryImage.Height);
+
+            //stvaranje grafike
+            Console.WriteLine("Stvaranje Graphicsa...");
+            Graphics memoryGraphics = Graphics.FromImage(memoryImage);
+
+            //spremanje podataka sa ekrana - od gornjeg lijevog ruba forme u sliku od (0,0) (s je veličina)
+            Console.WriteLine("Kopiranje podataka sa ekrana...");
+            memoryGraphics.CopyFromScreen(this.Left, this.Left, 0, 0, s);
+
+            //spremanje u datoteku
+            Console.WriteLine("Spremanje snimke zaslona...");
+
+            saveFileDialog1.Filter = "Jpeg Format Slike|*.jpg|Bitmap Format Slike|*.bmp|Gif Format Slike|*.gif";
+            saveFileDialog1.Title = "Spremi snimku zaslona";
+            saveFileDialog1.ShowDialog();
+
+            // If the file name is not an empty string open it for saving.  
+            if (saveFileDialog1.FileName != "")
+            {
+                //Sprema sliku kroz FileStream stvoren OpenFile metodom  
+                System.IO.FileStream fs =
+                   (System.IO.FileStream)saveFileDialog1.OpenFile();
+                //sprema sliku u odabranom ImageFormat-u koji je korisnik u DialogBoxu odabrao    
+                switch (saveFileDialog1.FilterIndex)
+                {
+                    case 1:
+                        memoryImage.Save(fs,
+                           System.Drawing.Imaging.ImageFormat.Jpeg);
+                        break;
+
+                    case 2:
+                        memoryImage.Save(fs,
+                           System.Drawing.Imaging.ImageFormat.Bmp);
+                        break;
+
+                    case 3:
+                        memoryImage.Save(fs,
+                           System.Drawing.Imaging.ImageFormat.Gif);
+                        break;
+                }
+
+                fs.Close();
+            }
+            Console.WriteLine("Snimka zaslona uspješno spremljena...");
+        }
     }
 }
