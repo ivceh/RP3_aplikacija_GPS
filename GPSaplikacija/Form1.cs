@@ -311,8 +311,31 @@ namespace GPSaplikacija
             System.Globalization.NumberFormatInfo info = new System.Globalization.NumberFormatInfo();
             info.NumberDecimalSeparator = ".";
             info.NumberGroupSeparator = ",";
-            double x = Convert.ToDouble(unosČvoraX.Text, info);
-            double y = Convert.ToDouble(unosČvoraY.Text, info);
+            double x = 0;
+            double y = 0;
+
+            try
+            {
+                x = Convert.ToDouble(unosČvoraX.Text, info);
+                y = Convert.ToDouble(unosČvoraY.Text, info);
+            }
+            catch
+            {
+                MessageBox.Show("Krivi format koordinata! (Za početak provjerite jeste li ih sve unijeli!)",
+                    "Krivi format", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Stop);
+                return;
+            }
+
+            if(unosImenaNovogČvora.Text == "")
+            {
+                MessageBox.Show("Niste unijeli ime novog čvora! Molimo unesite neko.", 
+                    "Nema imena", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Stop);
+                return;
+            }
 
             int status = Plan.DodajČvor(x, y, unosImenaNovogČvora.Text);
             if(status == -1)
@@ -347,27 +370,52 @@ namespace GPSaplikacija
         {
             string defaultni = "- odabrani čvor: ";
 
-            double vrijeme = Convert.ToDouble(unosVremenaSat.Text) * 3600
-                + Convert.ToDouble(unosVremenaMinuta.Text) * 60
-                + Convert.ToDouble(unosVremenaSekundi.Text);
-            string naziv = unosImenaNovogBrida.Text;
-            if(naziv == "")
+            if (unosVremenaSat.Text == "")
             {
-                MessageBox.Show("Niste unijeli ime novog brida!", "Unesite ime brida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Niste unijeli sat!", "Unesite ispravno vrijeme", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if(odabraniPočetniObavijest.Text.Substring(defaultni.Length) == "xxxxxxxxxx")
+            else if (unosVremenaMinuta.Text == "")
             {
-                MessageBox.Show("Niste odabrali početni vrh!", "Odaberite početni vrh", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Niste unijeli minute!", "Unesite ispravno vrijeme", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (odabraniZavršniObavijest.Text.Substring(defaultni.Length) == "xxxxxxxxxx")
+            else if (unosVremenaSekundi.Text == "")
             {
-                MessageBox.Show("Niste odabrali završni vrh!", "Odaberite završni vrh", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Niste unijeli sekunde!", "Unesite ispravno vrijeme", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                string poruka = Plan.DodajBrid(naziv, odabraniPočetniObavijest.Text.Substring(defaultni.Length), odabraniZavršniObavijest.Text.Substring(defaultni.Length), vrijeme);
-                MessageBox.Show(poruka, "Poruka", MessageBoxButtons.OK);
+                double vrijeme = 0;
+
+                try {
+                    vrijeme = Convert.ToDouble(unosVremenaSat.Text) * 3600
+                    + Convert.ToDouble(unosVremenaMinuta.Text) * 60
+                    + Convert.ToDouble(unosVremenaSekundi.Text);
+                } catch
+                {
+                    MessageBox.Show("Nije dozvoljen format vremena!", "Greška u vremenu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                string naziv = unosImenaNovogBrida.Text;
+                if (naziv == "")
+                {
+                    MessageBox.Show("Niste unijeli ime novog brida!", "Unesite ime brida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (odabraniPočetniObavijest.Text.Substring(defaultni.Length) == "xxxxxxxxxx")
+                {
+                    MessageBox.Show("Niste odabrali početni vrh!", "Odaberite početni vrh", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (odabraniZavršniObavijest.Text.Substring(defaultni.Length) == "xxxxxxxxxx")
+                {
+                    MessageBox.Show("Niste odabrali završni vrh!", "Odaberite završni vrh", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    string poruka = Plan.DodajBrid(naziv, odabraniPočetniObavijest.Text.Substring(defaultni.Length), odabraniZavršniObavijest.Text.Substring(defaultni.Length), vrijeme);
+                    MessageBox.Show(poruka, "Poruka", MessageBoxButtons.OK);
+                }
             }
+
+            pictureBox1.Refresh();
         }
 
 
@@ -386,6 +434,8 @@ namespace GPSaplikacija
             unešenaKarakteristika.Text = "";
             unešeniPosao.Text = "";
             unosImenaNovogBrida.Text = "";
+            odabraniPočetniObavijest.Text = "- odabrani čvor: xxxxxxxxxx";
+            odabraniZavršniObavijest.Text = "- odabrani čvor: xxxxxxxxxx";
         }
 
 
