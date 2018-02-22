@@ -363,6 +363,16 @@ namespace GPSaplikacija
         }
 
 
+        private void DijkstraTest(object sender, EventArgs e)
+        {
+            String s1 = odabraniPočetniObavijest.Text;
+            String s2 = odabraniZavršniObavijest.Text;
+            int l1 = "- odabrani čvor: ".Length;
+            s1 = s1.Substring(l1);
+            s2 = s2.Substring(l1);
+            Plan.nadiNajkraciPut(s1,s2);
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -464,6 +474,7 @@ namespace GPSaplikacija
 
             tražiNajkraći.Text = "TRAŽI";
             tražiNajkraći.Location = new Point(700, 20);
+            tražiNajkraći.Click += DijkstraTest;
 
             unesitePosaoOpis.Text = "Unesite posao: ";
             unesitePosaoOpis.AutoSize = true;
