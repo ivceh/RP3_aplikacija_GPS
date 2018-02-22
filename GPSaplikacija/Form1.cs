@@ -320,8 +320,6 @@ namespace GPSaplikacija
             double x = Skaliraj(p.X, 0, pictureBox1.Width, xlijevi, xdesni),
                    y = Skaliraj(p.Y, 0, pictureBox1.Height, ygornji, ydonji);
 
-            //koliko klik smije biti daleko od nekog čvora
-            double tolerancija = 10;
 
             var ee = e as System.Windows.Forms.MouseEventArgs;
 
