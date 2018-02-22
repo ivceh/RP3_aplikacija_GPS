@@ -87,7 +87,7 @@ namespace GPSaplikacija
             while (cc.bridPrethodnik != null)
             {
                 putID++;
-                messageText += (putID + ".: " + cc.bridPrethodnik);
+                messageText += (putID + ".: " + cc.bridPrethodnik + "\n");
                 cc = cc.bridPrethodnik.PočetniČvor == cc ? cc.bridPrethodnik.ZavršniČvor : cc.bridPrethodnik.PočetniČvor;
             }
 
