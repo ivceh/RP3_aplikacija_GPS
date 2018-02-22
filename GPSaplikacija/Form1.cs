@@ -300,8 +300,64 @@ namespace GPSaplikacija
         private void PictureBox1_Click(object sender, EventArgs e)
         {
             Point p = ((PictureBox)sender).PointToClient(Cursor.Position);
+            //prave koordinate:
             double x = Skaliraj(p.X, 0, pictureBox1.Width, xlijevi, xdesni),
                    y = Skaliraj(p.Y, 0, pictureBox1.Height, ygornji, ydonji);
+
+            //koliko klik smije biti daleko od nekog čvora
+            double tolerancija = 10;
+
+            var ee = e as System.Windows.Forms.MouseEventArgs;
+
+            string najbliziCvor = "", drugiNajbliziCvor = "";
+            double najblizaUdaljenost = -1, drugaNajblizaUdaljenost = -1;
+
+            //odredim najbliži čvor i udaljenost od njega
+            foreach (var element in Plan.SkupČvorova)
+            {
+                double izracunamoUdaljenost = (element.Value.X - x) * (element.Value.X - x) + (element.Value.Y - y) * (element.Value.Y - y);
+                if (najblizaUdaljenost == -1)
+                {
+                    najblizaUdaljenost = izracunamoUdaljenost;
+                    najbliziCvor = element.Key;
+                }
+                else if(izracunamoUdaljenost < najblizaUdaljenost)
+                {
+                    najblizaUdaljenost = izracunamoUdaljenost;
+                    najbliziCvor = element.Key;
+                }
+            }
+
+            //odredim drugi najbliži čvor i udaljenost od njega
+            foreach (var element in Plan.SkupČvorova)
+            {
+                double izracunamoUdaljenost = (element.Value.X - x) * (element.Value.X - x) + (element.Value.Y - y) * (element.Value.Y - y);
+                if (drugaNajblizaUdaljenost == -1 && element.Key != najbliziCvor)
+                {
+                    drugaNajblizaUdaljenost = izracunamoUdaljenost;
+                    drugiNajbliziCvor = element.Key;
+                }
+                else if (izracunamoUdaljenost < drugaNajblizaUdaljenost && element.Key != najbliziCvor)
+                {
+                    drugaNajblizaUdaljenost = izracunamoUdaljenost;
+                    drugiNajbliziCvor = element.Key;
+                }
+            }
+
+            if (najblizaUdaljenost != -1 && drugaNajblizaUdaljenost != -1)
+            {
+                if (najblizaUdaljenost * 9 <= drugaNajblizaUdaljenost)
+                {
+                    if (ee.Button == MouseButtons.Left)
+                    {
+                        odabraniPočetniObavijest.Text = "- odabrani čvor: " + najbliziCvor;
+                    }
+                    else if (ee.Button == MouseButtons.Right)
+                    {
+                        odabraniZavršniObavijest.Text = "- odabrani čvor: " + najbliziCvor;
+                    }
+                }
+            }
         }
 
         private void BojaCesteToolStripMenuItem_Click(object sender, EventArgs e)
