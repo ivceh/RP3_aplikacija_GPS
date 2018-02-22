@@ -46,11 +46,17 @@ namespace GPSaplikacija
                 Console.WriteLine(e);
             }
 
-            Dictionary<Čvor, Čvor> rjesenje = dijkstrinAlgoritam.nadiPutIzmedu(skupČvorova["PMF"], skupČvorova["GK"]);
+            Čvor c1 = skupČvorova["PMF"];
+            Čvor c2 = skupČvorova["TrgdrFT"];
+            dijkstrinAlgoritam.nadiPutIzmedu(c1, c2);
             Console.WriteLine("RJEŠENJE:");
-            foreach (Čvor cv in rjesenje.Values)
+            int putID = 0;
+            Čvor cc = c2;
+            while(cc.bridPrethodnik != null)
             {
-                Console.WriteLine(cv);
+                putID++;
+                Console.WriteLine(putID + ".: " + cc.bridPrethodnik);
+                cc = cc.bridPrethodnik.PočetniČvor == cc ? cc.bridPrethodnik.ZavršniČvor : cc.bridPrethodnik.PočetniČvor;
             }
         }
 

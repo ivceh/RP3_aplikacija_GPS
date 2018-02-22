@@ -9,28 +9,29 @@ namespace GPSaplikacija
     public class Dijkstra
     {
         public SortedSet<Čvor> neprođeniČvorovi = new SortedSet<Čvor>();
-        public Dictionary<Čvor, double> udaljenostiOdPocetka = new Dictionary<Čvor, double>();
-        public Dictionary<Čvor, Čvor> prethodniČvorovi = new Dictionary<Čvor, Čvor>();
 
         public Dijkstra()
         {
 
         }
 
-        public Dictionary<Čvor, Čvor> nadiPutIzmedu(Čvor c1, Čvor c2)
+        public void nadiPutIzmedu(Čvor c1, Čvor c2)
         {
             foreach (Čvor cv in Plan.skupČvorova.Values)
             {
-                Console.WriteLine(cv);
-                udaljenostiOdPocetka[cv] = Double.MaxValue;
-                prethodniČvorovi[cv] = null;
+                cv.udaljenostOdPocetka = Double.MaxValue;
+                cv.bridPrethodnik = null;
+                if (cv.naziv == c1.naziv)
+                {
+                    cv.udaljenostOdPocetka = 0;
+                }
+
                 neprođeniČvorovi.Add(cv);
             }
-            udaljenostiOdPocetka[c1] = 0;
 
             while(neprođeniČvorovi.Count != 0)
             {
-                Čvor trenutni = neprođeniČvorovi.Last();
+                Čvor trenutni = neprođeniČvorovi.First();
                 Console.WriteLine("trenutni cvor: " + trenutni);
 
                 if (trenutni.naziv == c2.naziv)
@@ -43,19 +44,17 @@ namespace GPSaplikacija
                 {
                     Console.WriteLine("susjed od " + trenutni + " -> " + susjedniBrid);
 
-                    double alt = udaljenostiOdPocetka[trenutni] + susjedniBrid.VrijemeProlaska;
+                    double alt = trenutni.udaljenostOdPocetka + susjedniBrid.VrijemeProlaska;
                     Čvor susjedniČvor = susjedniBrid.PočetniČvor == trenutni ? susjedniBrid.ZavršniČvor : susjedniBrid.PočetniČvor;
-                    if (alt < udaljenostiOdPocetka[susjedniČvor])
+                    if (alt < susjedniČvor.udaljenostOdPocetka)
                     {
-                        udaljenostiOdPocetka[susjedniČvor] = alt;
-                        prethodniČvorovi[susjedniČvor] = trenutni;
+                        susjedniČvor.udaljenostOdPocetka = alt;
+                        susjedniČvor.bridPrethodnik = susjedniBrid;
                     }
                 }
 
                 neprođeniČvorovi.Remove(trenutni);
             }
-
-            return prethodniČvorovi;
         }
     }
 }
