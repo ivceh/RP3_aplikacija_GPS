@@ -655,8 +655,7 @@ namespace GPSaplikacija
             {
                 try
                 {
-                    //player.URL
-                    player.URL = @"..\..\Ikson-Remember.mp3";
+                    player.URL = "Ikson-Remember.mp3";
                     player.controls.play();
                     glazbaSvira = true;
                 }

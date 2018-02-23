@@ -136,7 +136,9 @@
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
     <Content Include="gpsIcon.ico" />
-    <Content Include="Ikson-Remember.mp3" />
+    <Content Include="Ikson-Remember.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AxWMPLib">
