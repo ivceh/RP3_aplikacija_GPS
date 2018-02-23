@@ -67,7 +67,8 @@ namespace GPSaplikacija
             pBridUnutarnja = new Pen(Color.Yellow, 5),
             pČvor = new Pen(Color.Black);
         Brush b = new SolidBrush(Color.Orange),
-              textBrush = new SolidBrush(Color.Black);
+              textBrushDark = new SolidBrush(Color.Black),
+              textBrushLight  =new SolidBrush(Color.White);
 
         // boje za Dijkstrin put
         Pen dijBridVanjska = new Pen(Color.Black, 7),
@@ -100,7 +101,7 @@ namespace GPSaplikacija
                     }
                 }
             }
-            
+
             foreach (Čvor č in Plan.skupČvorova.Values)
             {
                 float xNaMapi, yNaMapi;
@@ -125,7 +126,15 @@ namespace GPSaplikacija
                     g.FillEllipse(b, xNaMapi - 5, yNaMapi - 5, 10, 10);
                 }
                 g.DrawEllipse(pČvor, xNaMapi - 5, yNaMapi - 5, 10, 10);
-                g.DrawString(č.naziv, fontKojiKoristim, textBrush, xNaMapi, yNaMapi + 5);
+
+                if (pictureBox1.BackColor.R > 100 && pictureBox1.BackColor.R > 100 && pictureBox1.BackColor.R > 100)
+                {
+                    g.DrawString(č.naziv, fontKojiKoristim, textBrushDark, xNaMapi, yNaMapi + 5);
+                }
+                else
+                {  
+                    g.DrawString(č.naziv, fontKojiKoristim, textBrushLight, xNaMapi, yNaMapi + 5);
+                }
             }
 
             if(budućiČvorPostoji == true)
@@ -138,7 +147,14 @@ namespace GPSaplikacija
                 Brush ispunaNovogČvora = new SolidBrush(Color.Red);
                 g.FillEllipse(ispunaNovogČvora, xNaMapi - 5, yNaMapi - 5, 10, 10);
                 g.DrawEllipse(pČvor, xNaMapi - 5, yNaMapi - 5, 10, 10);
-                g.DrawString("NOVI", fontKojiKoristim, textBrush, xNaMapi, yNaMapi + 5);
+                if (pictureBox1.BackColor.R > 100 && pictureBox1.BackColor.R > 100 && pictureBox1.BackColor.R > 100)
+                {
+                    g.DrawString("NOVI", fontKojiKoristim, textBrushDark, xNaMapi, yNaMapi + 5);
+                }
+                else
+                {
+                    g.DrawString("NOVI", fontKojiKoristim, textBrushLight, xNaMapi, yNaMapi + 5);
+                }
             }
             
         }
