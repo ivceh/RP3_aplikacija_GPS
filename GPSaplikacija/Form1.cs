@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
+using WMPLib;
 
 namespace GPSaplikacija
 {
     public partial class Form1 : Form
     {
+        WindowsMediaPlayer player = new WindowsMediaPlayer();
+        bool glazbaSvira = false;
+
         private Label labelNaslov = new Label();
         private Label unosČvoraNaslov = new Label();
         private Label tekstX = new Label();
@@ -639,6 +643,34 @@ namespace GPSaplikacija
 
                 pictureBox1.Refresh();
             }
+        }
+
+        private void svirajNeštoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(glazbaSvira == false)
+            {
+                try
+                {
+                    player.URL = "Ikson-Remember.mp3";
+                }
+                catch
+                {
+                    MessageBox.Show("Ne mogu naći glazbenu datoteku!", "Nema datoteke!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                player.controls.play();
+                glazbaSvira = true;
+
+                sviranje.Text = "Zaustavi glazbu";
+            }
+            else if(glazbaSvira == true)
+            {
+                player.controls.stop();
+                glazbaSvira = false;
+
+                sviranje.Text = "Sviraj nešto";
+            }
+
         }
     }
 }

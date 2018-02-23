@@ -55,11 +55,13 @@
             this.bojaČvorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.formaPozadinaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.odaberiFontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.sviranje = new System.Windows.Forms.ToolStripMenuItem();
             this.spremanjeSnimkeZaslona = new System.Windows.Forms.ToolStripButton();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.odaberiFontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -275,7 +277,7 @@
             // 
             this.čvorToolStripMenuItem.Name = "čvorToolStripMenuItem";
             this.čvorToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
-            this.čvorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.čvorToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.čvorToolStripMenuItem.Text = "Čvor";
             this.čvorToolStripMenuItem.Click += new System.EventHandler(this.ČvorToolStripMenuItem_Click);
             // 
@@ -283,7 +285,7 @@
             // 
             this.bridToolStripMenuItem.Name = "bridToolStripMenuItem";
             this.bridToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.bridToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bridToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.bridToolStripMenuItem.Text = "Brid";
             this.bridToolStripMenuItem.Click += new System.EventHandler(this.BridToolStripMenuItem_Click);
             // 
@@ -334,7 +336,9 @@
             this.toolStripMenuItem1,
             this.formaPozadinaToolStripMenuItem,
             this.toolStripMenuItem2,
-            this.odaberiFontToolStripMenuItem});
+            this.odaberiFontToolStripMenuItem,
+            this.toolStripMenuItem3,
+            this.sviranje});
             this.OdaberiBoje.Image = ((System.Drawing.Image)(resources.GetObject("OdaberiBoje.Image")));
             this.OdaberiBoje.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.OdaberiBoje.Name = "OdaberiBoje";
@@ -371,16 +375,6 @@
             this.formaPozadinaToolStripMenuItem.Text = "Forma - pozadina";
             this.formaPozadinaToolStripMenuItem.Click += new System.EventHandler(this.formaPozadinaToolStripMenuItem_Click);
             // 
-            // spremanjeSnimkeZaslona
-            // 
-            this.spremanjeSnimkeZaslona.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.spremanjeSnimkeZaslona.Image = ((System.Drawing.Image)(resources.GetObject("spremanjeSnimkeZaslona.Image")));
-            this.spremanjeSnimkeZaslona.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.spremanjeSnimkeZaslona.Name = "spremanjeSnimkeZaslona";
-            this.spremanjeSnimkeZaslona.Size = new System.Drawing.Size(92, 22);
-            this.spremanjeSnimkeZaslona.Text = "&Snimka zaslona";
-            this.spremanjeSnimkeZaslona.Click += new System.EventHandler(this.spremanjeSnimkeZaslona_Click);
-            // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
@@ -392,6 +386,28 @@
             this.odaberiFontToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.odaberiFontToolStripMenuItem.Text = "Odaberi font";
             this.odaberiFontToolStripMenuItem.Click += new System.EventHandler(this.odaberiFontToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(196, 6);
+            // 
+            // sviranje
+            // 
+            this.sviranje.Name = "sviranje";
+            this.sviranje.Size = new System.Drawing.Size(199, 22);
+            this.sviranje.Text = "Sviraj nešto";
+            this.sviranje.Click += new System.EventHandler(this.svirajNeštoToolStripMenuItem_Click);
+            // 
+            // spremanjeSnimkeZaslona
+            // 
+            this.spremanjeSnimkeZaslona.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.spremanjeSnimkeZaslona.Image = ((System.Drawing.Image)(resources.GetObject("spremanjeSnimkeZaslona.Image")));
+            this.spremanjeSnimkeZaslona.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.spremanjeSnimkeZaslona.Name = "spremanjeSnimkeZaslona";
+            this.spremanjeSnimkeZaslona.Size = new System.Drawing.Size(92, 22);
+            this.spremanjeSnimkeZaslona.Text = "&Snimka zaslona";
+            this.spremanjeSnimkeZaslona.Click += new System.EventHandler(this.spremanjeSnimkeZaslona_Click);
             // 
             // Form1
             // 
@@ -457,5 +473,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem odaberiFontToolStripMenuItem;
         private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem sviranje;
     }
 }
