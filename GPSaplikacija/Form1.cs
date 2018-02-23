@@ -628,7 +628,8 @@ namespace GPSaplikacija
         {
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
-                this.BackColor = colorDialog1.Color;
+                //this.BackColor = colorDialog1.Color;
+                pictureBox1.BackColor = colorDialog1.Color;
             }
         }
 
@@ -654,15 +655,15 @@ namespace GPSaplikacija
             {
                 try
                 {
-                    player.URL = "Ikson-Remember.mp3";
+                    //player.URL
+                    player.URL = @"..\..\Ikson-Remember.mp3";
+                    player.controls.play();
+                    glazbaSvira = true;
                 }
                 catch
                 {
                     MessageBox.Show("Ne mogu naći glazbenu datoteku!", "Nema datoteke!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-                player.controls.play();
-                glazbaSvira = true;
 
                 sviranje.Text = "Zaustavi glazbu";
             }
