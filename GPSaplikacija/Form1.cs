@@ -101,6 +101,7 @@ namespace GPSaplikacija
         private void BridToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OčistiPanel(sender, e);
+            uPostupkuOznačavanjaČvorova = true;
 
             panelSaKontrolama.Controls.Add(labelNaslov);
             labelNaslov.Text = "---DODAVANJE NOVOG BRIDA---";
@@ -150,6 +151,7 @@ namespace GPSaplikacija
         private void NajkraćiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OčistiPanel(sender, e);
+            uPostupkuOznačavanjaČvorova = true;
 
             panelSaKontrolama.Controls.Add(labelNaslov);
             labelNaslov.Text = "---TRAŽENJE NAJKRAĆEG PUTA---";
@@ -171,6 +173,7 @@ namespace GPSaplikacija
         private void PosaoUsputToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OčistiPanel(sender, e);
+            uPostupkuOznačavanjaČvorova = true;
 
             panelSaKontrolama.Controls.Add(labelNaslov);
             labelNaslov.Text = "---TRAŽENJE PUTA UZ POSAO---";
@@ -449,7 +452,7 @@ namespace GPSaplikacija
         {
             uPostupkuDodavanjaČvora = false;
             budućiČvorPostoji = false;
-            pictureBox1.Refresh();
+            uPostupkuOznačavanjaČvorova = false;
 
             panelSaKontrolama.Controls.Clear();
             unosČvoraX.Text = "";
@@ -463,6 +466,8 @@ namespace GPSaplikacija
             unosImenaNovogBrida.Text = "";
             odabraniPočetniObavijest.Text = "- odabrani čvor: xxxxxxxxxx";
             odabraniZavršniObavijest.Text = "- odabrani čvor: xxxxxxxxxx";
+
+            pictureBox1.Refresh();
         }
 
 
@@ -533,9 +538,11 @@ namespace GPSaplikacija
 
             odabraniPočetniObavijest.Text = "- odabrani čvor: xxxxxxxxxx";
             odabraniPočetniObavijest.AutoSize = true;
+            odabraniPočetniObavijest.ForeColor = Color.Blue;
 
             odabraniZavršniObavijest.Text = "- odabrani čvor: xxxxxxxxxx";
             odabraniZavršniObavijest.AutoSize = true;
+            odabraniZavršniObavijest.ForeColor = Color.Red;
 
             unesiteVrijeme.Text = "Unesite vrijeme: ";
             unesiteVrijeme.Location = new Point(10, 73);

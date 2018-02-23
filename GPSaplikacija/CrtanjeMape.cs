@@ -14,6 +14,7 @@ namespace GPSaplikacija
         double budućiČvorY;
         bool budućiČvorPostoji = false;
         bool uPostupkuDodavanjaČvora = false;
+        bool uPostupkuOznačavanjaČvorova = false;
 
         // koordinate dijela koji mapa prikazuje
         double xlijevi = 0, xdesni = 1000, ygornji = 0, ydonji = 1000;
@@ -106,7 +107,23 @@ namespace GPSaplikacija
                 xNaMapi = (float)Skaliraj(č.X, xlijevi, xdesni, 0, pictureBox1.Width);
                 yNaMapi = (float)Skaliraj(č.Y, ygornji, ydonji, 0, pictureBox1.Height);
 
-                g.FillEllipse(b, xNaMapi - 5, yNaMapi - 5, 10, 10);
+
+
+                string defaultni = "- odabrani čvor: ";
+                if (č.naziv == odabraniPočetniObavijest.Text.Substring(defaultni.Length) && uPostupkuOznačavanjaČvorova == true)
+                {
+                    Brush početni = new SolidBrush(Color.Blue);
+                    g.FillEllipse(početni, xNaMapi - 5, yNaMapi - 5, 10, 10);
+                }
+                else if (č.naziv == odabraniZavršniObavijest.Text.Substring(defaultni.Length) && uPostupkuOznačavanjaČvorova == true)
+                {
+                    Brush završni = new SolidBrush(Color.Red);
+                    g.FillEllipse(završni, xNaMapi - 5, yNaMapi - 5, 10, 10);
+                }
+                else
+                {
+                    g.FillEllipse(b, xNaMapi - 5, yNaMapi - 5, 10, 10);
+                }
                 g.DrawEllipse(pČvor, xNaMapi - 5, yNaMapi - 5, 10, 10);
                 g.DrawString(č.naziv, fontKojiKoristim, textBrush, xNaMapi, yNaMapi + 5);
             }
