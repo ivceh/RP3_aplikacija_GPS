@@ -13,6 +13,9 @@ namespace GPSaplikacija
         Čvor završniČvor;
         double vrijemeProlaska; //u sekundama
 
+        // podaci vezani uz Dijkstrino traženje
+        public bool isDioPuta = false;
+
         public Brid(string naziv, Čvor početni, Čvor završni, double vrijeme)
         {
             this.naziv = naziv;
