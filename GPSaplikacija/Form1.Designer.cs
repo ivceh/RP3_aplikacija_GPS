@@ -143,6 +143,7 @@
             this.gumbSmanji.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.gumbSmanji.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gumbSmanji.BackgroundImage")));
             this.gumbSmanji.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gumbSmanji.Cursor = System.Windows.Forms.Cursors.Default;
             this.gumbSmanji.Location = new System.Drawing.Point(15, 3);
             this.gumbSmanji.Name = "gumbSmanji";
             this.gumbSmanji.Size = new System.Drawing.Size(70, 50);
@@ -156,6 +157,7 @@
             this.gumbPovecaj.BackColor = System.Drawing.SystemColors.ControlLight;
             this.gumbPovecaj.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("gumbPovecaj.BackgroundImage")));
             this.gumbPovecaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.gumbPovecaj.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.gumbPovecaj.Location = new System.Drawing.Point(115, 3);
             this.gumbPovecaj.Name = "gumbPovecaj";
             this.gumbPovecaj.Size = new System.Drawing.Size(70, 50);
@@ -289,21 +291,24 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(51, 22);
             this.toolStripButton1.Text = "&Dodaj";
+            this.toolStripButton1.ToolTipText = "Dodajte brid ili čvor trenutnom planu.";
             // 
             // čvorToolStripMenuItem
             // 
             this.čvorToolStripMenuItem.Name = "čvorToolStripMenuItem";
             this.čvorToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
-            this.čvorToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.čvorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.čvorToolStripMenuItem.Text = "Čvor";
+            this.čvorToolStripMenuItem.ToolTipText = "Dodajte čvor trenutnom planu.";
             this.čvorToolStripMenuItem.Click += new System.EventHandler(this.ČvorToolStripMenuItem_Click);
             // 
             // bridToolStripMenuItem
             // 
             this.bridToolStripMenuItem.Name = "bridToolStripMenuItem";
             this.bridToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.bridToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.bridToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.bridToolStripMenuItem.Text = "Brid";
+            this.bridToolStripMenuItem.ToolTipText = "Dodajte brid trenutnom planu.";
             this.bridToolStripMenuItem.Click += new System.EventHandler(this.BridToolStripMenuItem_Click);
             // 
             // toolStripButton2
@@ -316,6 +321,7 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(66, 22);
             this.toolStripButton2.Text = "&Nađi put";
+            this.toolStripButton2.ToolTipText = "Pronađite put između polazne i željene lokacije.";
             // 
             // najkraćiToolStripMenuItem
             // 
@@ -323,6 +329,7 @@
             this.najkraćiToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.najkraćiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.najkraćiToolStripMenuItem.Text = "Najkraći";
+            this.najkraćiToolStripMenuItem.ToolTipText = "Pronađite najkraći put i stignite brzo na željeno odredište.";
             this.najkraćiToolStripMenuItem.Click += new System.EventHandler(this.NajkraćiToolStripMenuItem_Click);
             // 
             // posaoUsputToolStripMenuItem
@@ -332,6 +339,7 @@
             this.posaoUsputToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.posaoUsputToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.posaoUsputToolStripMenuItem.Text = "Posao usput";
+            this.posaoUsputToolStripMenuItem.ToolTipText = "Pronađite najkraći put, ali tako da pritom obavite predviđeni posao.";
             this.posaoUsputToolStripMenuItem.Click += new System.EventHandler(this.PosaoUsputToolStripMenuItem_Click);
             // 
             // toolStripButton3
@@ -342,6 +350,7 @@
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(52, 22);
             this.toolStripButton3.Text = "&Pronađi";
+            this.toolStripButton3.ToolTipText = "Pronađite čvorove i/ili bridove sa željenom karakteristikom.";
             this.toolStripButton3.Click += new System.EventHandler(this.ToolStripButton3_Click);
             // 
             // OdaberiBoje
@@ -361,14 +370,16 @@
             this.OdaberiBoje.Name = "OdaberiBoje";
             this.OdaberiBoje.Size = new System.Drawing.Size(89, 22);
             this.OdaberiBoje.Text = "P&ersonaliziraj";
+            this.OdaberiBoje.ToolTipText = "Personalizirajte aplikaciju.";
             // 
             // bojaCesteToolStripMenuItem
             // 
             this.bojaCesteToolStripMenuItem.Name = "bojaCesteToolStripMenuItem";
             this.bojaCesteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
             | System.Windows.Forms.Keys.C)));
-            this.bojaCesteToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.bojaCesteToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.bojaCesteToolStripMenuItem.Text = "Boja ceste";
+            this.bojaCesteToolStripMenuItem.ToolTipText = "Odaberite boju kojom se crtaju bridovi.";
             this.bojaCesteToolStripMenuItem.Click += new System.EventHandler(this.BojaCesteToolStripMenuItem_Click);
             // 
             // bojaČvorToolStripMenuItem
@@ -376,44 +387,54 @@
             this.bojaČvorToolStripMenuItem.Name = "bojaČvorToolStripMenuItem";
             this.bojaČvorToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.C)));
-            this.bojaČvorToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.bojaČvorToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.bojaČvorToolStripMenuItem.Text = "Boja čvora";
+            this.bojaČvorToolStripMenuItem.ToolTipText = "Odaberite boju kojom se crtaju čvorovi.";
             this.bojaČvorToolStripMenuItem.Click += new System.EventHandler(this.BojaČvorToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(196, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(237, 6);
             // 
             // formaPozadinaToolStripMenuItem
             // 
             this.formaPozadinaToolStripMenuItem.Name = "formaPozadinaToolStripMenuItem";
-            this.formaPozadinaToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.formaPozadinaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.P)));
+            this.formaPozadinaToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.formaPozadinaToolStripMenuItem.Text = "Forma - pozadina";
+            this.formaPozadinaToolStripMenuItem.ToolTipText = "Odaberite boju pozadine plana.";
             this.formaPozadinaToolStripMenuItem.Click += new System.EventHandler(this.formaPozadinaToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(196, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(237, 6);
             // 
             // odaberiFontToolStripMenuItem
             // 
             this.odaberiFontToolStripMenuItem.Name = "odaberiFontToolStripMenuItem";
-            this.odaberiFontToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.odaberiFontToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.F)));
+            this.odaberiFontToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.odaberiFontToolStripMenuItem.Text = "Odaberi font";
+            this.odaberiFontToolStripMenuItem.ToolTipText = "Odaberite font za nazive čvorova i bridova.";
             this.odaberiFontToolStripMenuItem.Click += new System.EventHandler(this.odaberiFontToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(196, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(237, 6);
             // 
             // sviranje
             // 
             this.sviranje.Name = "sviranje";
-            this.sviranje.Size = new System.Drawing.Size(199, 22);
+            this.sviranje.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.M)));
+            this.sviranje.Size = new System.Drawing.Size(240, 22);
             this.sviranje.Text = "Sviraj nešto";
+            this.sviranje.ToolTipText = "Pustite si malo glazbe dok se zabavljate u našoj aplikaciji.";
             this.sviranje.Click += new System.EventHandler(this.svirajNeštoToolStripMenuItem_Click);
             // 
             // spremanjeSnimkeZaslona
@@ -424,6 +445,7 @@
             this.spremanjeSnimkeZaslona.Name = "spremanjeSnimkeZaslona";
             this.spremanjeSnimkeZaslona.Size = new System.Drawing.Size(92, 22);
             this.spremanjeSnimkeZaslona.Text = "&Snimka zaslona";
+            this.spremanjeSnimkeZaslona.ToolTipText = "Spremite trenutnu snimku zaslona cijele aplikacije.";
             this.spremanjeSnimkeZaslona.Click += new System.EventHandler(this.spremanjeSnimkeZaslona_Click);
             // 
             // timer1
