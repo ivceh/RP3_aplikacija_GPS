@@ -451,7 +451,10 @@ namespace GPSaplikacija
             int l1 = "- odabrani čvor: ".Length;
             s1 = s1.Substring(l1);
             s2 = s2.Substring(l1);
+
             Plan.nadiNajkraciPut(s1,s2);
+
+            pictureBox1.Refresh();
         }
 
 

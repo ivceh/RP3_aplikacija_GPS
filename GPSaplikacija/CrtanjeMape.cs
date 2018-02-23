@@ -57,11 +57,15 @@ namespace GPSaplikacija
         }
 
         // obrubi i sjenčanja
-        Pen pBridVanjska = new Pen(Color.Black, 7),
+        static Pen pBridVanjska = new Pen(Color.Black, 7),
             pBridUnutarnja = new Pen(Color.Yellow, 5),
             pČvor = new Pen(Color.Black);
         Brush b = new SolidBrush(Color.Orange),
               textBrush = new SolidBrush(Color.Black);
+
+        // boje za Dijkstrin put
+        Pen dijBridVanjska = new Pen(Color.Black, 7),
+            dijBridUnutarnja = pBridUnutarnja.Color == Color.Green ? new Pen(Color.Red, 5) : new Pen(Color.Green, 5);
 
         private void PictureBox1_Paint(object sender, PaintEventArgs e)
         {
@@ -79,7 +83,15 @@ namespace GPSaplikacija
                     xzNaMapi = (float)Skaliraj(cz.X, xlijevi, xdesni, 0, pictureBox1.Width);
                     yzNaMapi = (float)Skaliraj(cz.Y, ygornji, ydonji, 0, pictureBox1.Height);
 
-                    g.DrawLine(p, xpNaMapi, ypNaMapi, xzNaMapi, yzNaMapi);
+                    if (b.isDioPuta)
+                    {
+                        g.DrawLine(dijBridVanjska, xpNaMapi, ypNaMapi, xzNaMapi, yzNaMapi);
+                        g.DrawLine(dijBridUnutarnja, xpNaMapi, ypNaMapi, xzNaMapi, yzNaMapi);
+                    }
+                    else
+                    {
+                        g.DrawLine(p, xpNaMapi, ypNaMapi, xzNaMapi, yzNaMapi);
+                    }
                 }
             }
             

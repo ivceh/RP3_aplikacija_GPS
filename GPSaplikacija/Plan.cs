@@ -141,7 +141,7 @@ namespace GPSaplikacija
             //nadiNajkraciPut(skupČvorova["PMF"], skupČvorova["Crnomerec"]);
         }
 
-        public static Čvor nadiNajkraciPut(String s1, String s2)
+        public static void nadiNajkraciPut(String s1, String s2)
         {
             Čvor c1 = skupČvorova[s1];
             Čvor c2 = skupČvorova[s2];
@@ -155,13 +155,12 @@ namespace GPSaplikacija
             while (cc.bridPrethodnik != null)
             {
                 putID++;
+                cc.bridPrethodnik.isDioPuta = true;
                 messageText += (putID + ".: " + cc.bridPrethodnik + "\n");
                 cc = cc.bridPrethodnik.PočetniČvor == cc ? cc.bridPrethodnik.ZavršniČvor : cc.bridPrethodnik.PočetniČvor;
             }
 
             MessageBox.Show(messageText,"NAJKRAĆI PUT",MessageBoxButtons.OK);
-
-            return c2;
 		}
 
         public static Dictionary<string, Čvor> SkupČvorova

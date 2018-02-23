@@ -51,6 +51,7 @@ namespace GPSaplikacija
                 foreach (Brid susjedniBrid in trenutni.skupSusjednihBridova)
                 {
                     Console.WriteLine("susjed od " + trenutni + " -> " + susjedniBrid);
+                    susjedniBrid.isDioPuta = false;
 
                     double alt = trenutni.udaljenostOdPocetka + susjedniBrid.VrijemeProlaska;
                     Čvor susjedniČvor = susjedniBrid.PočetniČvor == trenutni ? susjedniBrid.ZavršniČvor : susjedniBrid.PočetniČvor;
