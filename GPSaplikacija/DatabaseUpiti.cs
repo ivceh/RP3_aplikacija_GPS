@@ -70,7 +70,7 @@ namespace GPSaplikacija
                            završni = sqlReader["ZavrsniCvor"].ToString(),
                            naziv = sqlReader["NazivBrida"].ToString();
                     double vrijeme = (double)sqlReader["Vrijeme"];
-                    Plan.DodajBrid(naziv, početni, završni, vrijeme);
+                    Plan.DodajBrid(naziv, početni, završni, vrijeme); // možda provjeriti rezultat izvršavanja?
                 }
 
                 sqlReader.Close();

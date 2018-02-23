@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace GPSaplikacija
 {
-    public class Čvor : IComparable<Čvor>
+    public class Čvor : IComparable<Čvor>, IEquatable<Čvor>
     {
         public string naziv;
         double x;
         double y;
-        public SortedSet<Brid> skupSusjednihBridova = new SortedSet<Brid>();
+        public HashSet<Brid> skupSusjednihBridova = new HashSet<Brid>();
 
         // podatci vezani uz Dijkstrino traženje
         public double udaljenostOdPocetka;
@@ -27,6 +27,8 @@ namespace GPSaplikacija
 
         public void DodajSusjedniBrid(Brid susjed)
         {
+            if (skupSusjednihBridova.Contains(susjed))
+                susjed = susjed;
             skupSusjednihBridova.Add(susjed);
         }
 
@@ -55,6 +57,16 @@ namespace GPSaplikacija
         public override string ToString()
         {
             return naziv + " (" + x.ToString() + "," + y.ToString() + ")";
+        }
+
+        public bool Equals(Čvor other)
+        {
+            return naziv.Equals(other.naziv);
+        }
+
+        public override int GetHashCode()
+        {
+            return naziv.GetHashCode();
         }
     }
 }
