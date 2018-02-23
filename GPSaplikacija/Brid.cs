@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GPSaplikacija
 {
-    public class Brid : IComparable<Brid>
+    public class Brid : IComparable<Brid>, IEquatable<Brid>
     {
         string naziv;
         Čvor početniČvor;
@@ -48,6 +48,16 @@ namespace GPSaplikacija
         public override string ToString()
         {
             return naziv + " (" + početniČvor.ToString() + "," + završniČvor.ToString() + ")";
+        }
+
+        public bool Equals(Brid other)
+        {
+            return početniČvor.Equals(other.početniČvor) && završniČvor.Equals(other.završniČvor);
+        }
+
+        public override int GetHashCode()
+        {
+            return unchecked(početniČvor.GetHashCode() + završniČvor.GetHashCode());
         }
     }
 }

@@ -91,8 +91,8 @@ namespace GPSaplikacija
                 {
                     Brid noviBrid;
                     skupBridova.Add(naziv, noviBrid = new Brid(naziv, početniČvor, završniČvor, vrijeme));
-                    početniČvor.skupSusjednihBridova.Add(noviBrid);
-                    završniČvor.skupSusjednihBridova.Add(noviBrid);
+                    početniČvor.DodajSusjedniBrid(noviBrid);
+                    završniČvor.DodajSusjedniBrid(noviBrid);
                     poruka = "Uspješno dodan brid od " + početni + " do " + završni + ".";
                 }
                 catch (ArgumentException)
@@ -126,11 +126,14 @@ namespace GPSaplikacija
                     string naz = (string)bridovi[i]["naziv"];
                     string poc = (string)bridovi[i]["pocetni"];
                     string zav = (string)bridovi[i]["zavrsni"];
+                    double vrijeme = (double)bridovi[i]["vrijeme"];
 
-                    skupBridova[naz] = new Brid(naz, skupČvorova[poc], skupČvorova[zav], (double)bridovi[i]["vrijeme"]);
+                    string rez = DodajBrid(naz, poc, zav, vrijeme);
+                    MessageBox.Show(rez);
+                    //skupBridova[naz] = new Brid(naz, skupČvorova[poc], skupČvorova[zav], (double)bridovi[i]["vrijeme"]);
 
-                    skupČvorova[poc].DodajSusjedniBrid(skupBridova[naz]);
-                    skupČvorova[zav].DodajSusjedniBrid(skupBridova[naz]);
+                    //skupČvorova[poc].DodajSusjedniBrid(skupBridova[naz]);
+                    //skupČvorova[zav].DodajSusjedniBrid(skupBridova[naz]);
                 }
             }
             catch (Exception e)
@@ -148,7 +151,7 @@ namespace GPSaplikacija
 
             dijkstrinAlgoritam.nadiPutIzmedu(c1, c2);
 
-            String messageText = "RJEŠENJE;\n";
+            //String messageText = "RJEŠENJE;\n";
 
             int putID = 0;
             Čvor cc = c2;
