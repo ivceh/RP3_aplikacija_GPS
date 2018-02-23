@@ -10,6 +10,11 @@ namespace GPSaplikacija
 {
     partial class Form1
     {
+        double budućiČvorX;
+        double budućiČvorY;
+        bool budućiČvorPostoji = false;
+        bool uPostupkuDodavanjaČvora = false;
+
         // koordinate dijela koji mapa prikazuje
         double xlijevi = 0, xdesni = 1000, ygornji = 0, ydonji = 1000;
 
@@ -105,6 +110,20 @@ namespace GPSaplikacija
                 g.DrawEllipse(pČvor, xNaMapi - 5, yNaMapi - 5, 10, 10);
                 g.DrawString(č.naziv, fontKojiKoristim, textBrush, xNaMapi, yNaMapi + 5);
             }
+
+            if(budućiČvorPostoji == true)
+            {
+                float xNaMapi, yNaMapi;
+                xNaMapi = (float)Skaliraj(budućiČvorX, xlijevi, xdesni, 0, pictureBox1.Width);
+                yNaMapi = (float)Skaliraj(budućiČvorY, ygornji, ydonji, 0, pictureBox1.Height);
+
+
+                Brush ispunaNovogČvora = new SolidBrush(Color.Red);
+                g.FillEllipse(ispunaNovogČvora, xNaMapi - 5, yNaMapi - 5, 10, 10);
+                g.DrawEllipse(pČvor, xNaMapi - 5, yNaMapi - 5, 10, 10);
+                g.DrawString("NOVI", fontKojiKoristim, textBrush, xNaMapi, yNaMapi + 5);
+            }
+            
         }
 
         private void GumbSmanji_Click(object sender, EventArgs e)

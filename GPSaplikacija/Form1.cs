@@ -92,6 +92,8 @@ namespace GPSaplikacija
             panelSaKontrolama.Controls.Add(dodajČvor);
             panelSaKontrolama.Controls.Add(gumbOdustani);
             gumbOdustani.Location = new Point(500, 60);
+
+            uPostupkuDodavanjaČvora = true;
         }
 
 
@@ -255,6 +257,20 @@ namespace GPSaplikacija
             //za unos čvora, popuniti X i Y
             unosČvoraX.Text = x.ToString("F2", CultureInfo.GetCultureInfo("en-US"));
             unosČvoraY.Text = y.ToString("F2", CultureInfo.GetCultureInfo("en-US"));
+
+            budućiČvorX = x;
+            budućiČvorY = y;
+
+            if (uPostupkuDodavanjaČvora == true)
+            {
+                budućiČvorPostoji = true;
+            }
+            else
+            {
+                budućiČvorPostoji = false;
+            }
+
+            pictureBox1.Refresh();
         }
 
         private void BojaCesteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -313,6 +329,8 @@ namespace GPSaplikacija
 
         private void dodajČvorPlanu(object sender, EventArgs e)
         {
+            budućiČvorPostoji = false;
+
             System.Globalization.NumberFormatInfo info = new System.Globalization.NumberFormatInfo();
             info.NumberDecimalSeparator = ".";
             info.NumberGroupSeparator = ",";
@@ -429,6 +447,10 @@ namespace GPSaplikacija
 
         private void OčistiPanel(object sender, EventArgs e)
         {
+            uPostupkuDodavanjaČvora = false;
+            budućiČvorPostoji = false;
+            pictureBox1.Refresh();
+
             panelSaKontrolama.Controls.Clear();
             unosČvoraX.Text = "";
             unosČvoraY.Text = "";
@@ -673,6 +695,11 @@ namespace GPSaplikacija
 
                 sviranje.Text = "Sviraj nešto";
             }
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
