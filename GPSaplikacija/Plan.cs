@@ -128,8 +128,7 @@ namespace GPSaplikacija
                     string zav = (string)bridovi[i]["zavrsni"];
                     double vrijeme = (double)bridovi[i]["vrijeme"];
 
-                    string rez = DodajBrid(naz, poc, zav, vrijeme);
-                    MessageBox.Show(rez);
+                    DodajBrid(naz, poc, zav, vrijeme); // možda provjeriti rezultat izvršavanja
                     //skupBridova[naz] = new Brid(naz, skupČvorova[poc], skupČvorova[zav], (double)bridovi[i]["vrijeme"]);
 
                     //skupČvorova[poc].DodajSusjedniBrid(skupBridova[naz]);

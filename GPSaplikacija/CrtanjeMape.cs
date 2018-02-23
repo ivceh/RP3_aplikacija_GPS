@@ -99,6 +99,12 @@ namespace GPSaplikacija
                     {
                         g.DrawLine(p, xpNaMapi, ypNaMapi, xzNaMapi, yzNaMapi);
                     }
+
+                    if (p == pBridUnutarnja)
+                    {
+                        bool tamniBrush = pictureBox1.BackColor.R > 100 && pictureBox1.BackColor.R > 100 && pictureBox1.BackColor.R > 100;
+                        g.DrawString(b.Naziv, fontKojiKoristim, tamniBrush ? textBrushDark : textBrushLight, (xpNaMapi + xzNaMapi) / 2 - 20, (ypNaMapi + yzNaMapi) / 2 - 10);
+                    }
                 }
             }
 

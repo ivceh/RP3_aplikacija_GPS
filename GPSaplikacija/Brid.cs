@@ -45,6 +45,11 @@ namespace GPSaplikacija
             get { return vrijemeProlaska; }
         }
 
+        public string Naziv
+        {
+            get { return naziv; }
+        }
+
         public override string ToString()
         {
             return naziv + " (" + početniČvor.ToString() + "," + završniČvor.ToString() + ")";
