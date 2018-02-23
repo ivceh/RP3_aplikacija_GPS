@@ -578,7 +578,7 @@ namespace GPSaplikacija
 
             //spremanje podataka sa ekrana - od gornjeg lijevog ruba forme u sliku od (0,0) (s je veličina)
             Console.WriteLine("Kopiranje podataka sa ekrana...");
-            memoryGraphics.CopyFromScreen(this.Left, this.Left, 0, 0, s);
+            memoryGraphics.CopyFromScreen(this.Left, this.Top, 0, 0, s);
 
             //spremanje u datoteku
             Console.WriteLine("Spremanje snimke zaslona...");
