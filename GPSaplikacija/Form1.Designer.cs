@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -42,6 +43,7 @@
             this.gumbDolje = new System.Windows.Forms.Button();
             this.labelOpis = new System.Windows.Forms.Label();
             this.panelSaKontrolama = new System.Windows.Forms.Panel();
+            this.vrijeme = new System.Windows.Forms.Label();
             this.Dodaj = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.čvorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,10 +65,12 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanelDesni.SuspendLayout();
             this.tableLayoutPanelStrelice.SuspendLayout();
+            this.panelSaKontrolama.SuspendLayout();
             this.Dodaj.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,7 +92,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1030, 507);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // pictureBox1
             // 
@@ -245,11 +248,24 @@
             // panelSaKontrolama
             // 
             this.panelSaKontrolama.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelSaKontrolama.Controls.Add(this.vrijeme);
             this.panelSaKontrolama.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelSaKontrolama.Location = new System.Drawing.Point(3, 408);
             this.panelSaKontrolama.Name = "panelSaKontrolama";
             this.panelSaKontrolama.Size = new System.Drawing.Size(818, 96);
             this.panelSaKontrolama.TabIndex = 3;
+            // 
+            // vrijeme
+            // 
+            this.vrijeme.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.vrijeme.AutoSize = true;
+            this.vrijeme.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.vrijeme.ForeColor = System.Drawing.Color.Black;
+            this.vrijeme.Location = new System.Drawing.Point(357, 34);
+            this.vrijeme.Name = "vrijeme";
+            this.vrijeme.Size = new System.Drawing.Size(0, 26);
+            this.vrijeme.TabIndex = 0;
+            this.vrijeme.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Dodaj
             // 
@@ -278,7 +294,7 @@
             // 
             this.čvorToolStripMenuItem.Name = "čvorToolStripMenuItem";
             this.čvorToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
-            this.čvorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.čvorToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.čvorToolStripMenuItem.Text = "Čvor";
             this.čvorToolStripMenuItem.Click += new System.EventHandler(this.ČvorToolStripMenuItem_Click);
             // 
@@ -286,7 +302,7 @@
             // 
             this.bridToolStripMenuItem.Name = "bridToolStripMenuItem";
             this.bridToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.bridToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bridToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.bridToolStripMenuItem.Text = "Brid";
             this.bridToolStripMenuItem.Click += new System.EventHandler(this.BridToolStripMenuItem_Click);
             // 
@@ -410,6 +426,11 @@
             this.spremanjeSnimkeZaslona.Text = "&Snimka zaslona";
             this.spremanjeSnimkeZaslona.Click += new System.EventHandler(this.spremanjeSnimkeZaslona_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -433,6 +454,8 @@
             this.tableLayoutPanelDesni.ResumeLayout(false);
             this.tableLayoutPanelDesni.PerformLayout();
             this.tableLayoutPanelStrelice.ResumeLayout(false);
+            this.panelSaKontrolama.ResumeLayout(false);
+            this.panelSaKontrolama.PerformLayout();
             this.Dodaj.ResumeLayout(false);
             this.Dodaj.PerformLayout();
             this.ResumeLayout(false);
@@ -476,5 +499,7 @@
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem sviranje;
+        private System.Windows.Forms.Label vrijeme;
+        private System.Windows.Forms.Timer timer1;
     }
 }

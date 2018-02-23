@@ -17,6 +17,7 @@ namespace GPSaplikacija
         WindowsMediaPlayer player = new WindowsMediaPlayer();
         bool glazbaSvira = false;
 
+
         private Label labelNaslov = new Label();
         private Label unosČvoraNaslov = new Label();
         private Label tekstX = new Label();
@@ -79,6 +80,8 @@ namespace GPSaplikacija
         private void ČvorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OčistiPanel(sender, e);
+            //ne prikazuj vrijeme
+            vrijeme.Visible = false;
 
             panelSaKontrolama.Controls.Add(labelNaslov);
             labelNaslov.Text = "Unesite koordinate novog čvora ili kliknite na mapu.";
@@ -102,6 +105,8 @@ namespace GPSaplikacija
         {
             OčistiPanel(sender, e);
             uPostupkuOznačavanjaČvorova = true;
+            //ne prikazuj vrijeme
+            vrijeme.Visible = false;
 
             panelSaKontrolama.Controls.Add(labelNaslov);
             labelNaslov.Text = "---DODAVANJE NOVOG BRIDA---";
@@ -133,6 +138,8 @@ namespace GPSaplikacija
         private void ToolStripButton3_Click(object sender, EventArgs e)
         {
             OčistiPanel(sender, e);
+            //ne prikazuj vrijeme
+            vrijeme.Visible = false;
 
             panelSaKontrolama.Controls.Add(labelNaslov);
             labelNaslov.Text = "---TRAŽENJE KARAKTERISTIKE---";
@@ -152,6 +159,8 @@ namespace GPSaplikacija
         {
             OčistiPanel(sender, e);
             uPostupkuOznačavanjaČvorova = true;
+            //ne prikazuj vrijeme
+            vrijeme.Visible = false;
 
             panelSaKontrolama.Controls.Add(labelNaslov);
             labelNaslov.Text = "---TRAŽENJE NAJKRAĆEG PUTA---";
@@ -174,6 +183,8 @@ namespace GPSaplikacija
         {
             OčistiPanel(sender, e);
             uPostupkuOznačavanjaČvorova = true;
+            //ne prikazuj vrijeme
+            vrijeme.Visible = false;
 
             panelSaKontrolama.Controls.Add(labelNaslov);
             labelNaslov.Text = "---TRAŽENJE PUTA UZ POSAO---";
@@ -467,6 +478,10 @@ namespace GPSaplikacija
             odabraniPočetniObavijest.Text = "- odabrani čvor: xxxxxxxxxx";
             odabraniZavršniObavijest.Text = "- odabrani čvor: xxxxxxxxxx";
 
+            //pokaži vrijeme
+            panelSaKontrolama.Controls.Add(vrijeme);
+            vrijeme.Visible = true;
+
             pictureBox1.Refresh();
         }
 
@@ -487,6 +502,8 @@ namespace GPSaplikacija
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            timer1.Start();
+
             labelNaslov.AutoSize = true;
             labelNaslov.Font = fontKojiNeMijenjam;
 
@@ -705,9 +722,11 @@ namespace GPSaplikacija
 
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-
+            DateTime theDate;
+            theDate = DateTime.Now;
+            vrijeme.Text = theDate.ToString();
         }
     }
 }
