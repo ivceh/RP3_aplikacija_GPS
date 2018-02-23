@@ -156,11 +156,11 @@ namespace GPSaplikacija
             {
                 putID++;
                 cc.bridPrethodnik.isDioPuta = true;
-                messageText += (putID + ".: " + cc.bridPrethodnik + "\n");
+                //messageText += (putID + ".: " + cc.bridPrethodnik + "\n");
                 cc = cc.bridPrethodnik.PočetniČvor == cc ? cc.bridPrethodnik.ZavršniČvor : cc.bridPrethodnik.PočetniČvor;
             }
 
-            MessageBox.Show(messageText,"NAJKRAĆI PUT",MessageBoxButtons.OK);
+            //MessageBox.Show(messageText,"NAJKRAĆI PUT",MessageBoxButtons.OK);
 		}
 
         public static Dictionary<string, Čvor> SkupČvorova

@@ -17,6 +17,11 @@ namespace GPSaplikacija
 
         public void nadiPutIzmedu(Čvor c1, Čvor c2)
         {
+            foreach (Brid br in Plan.skupBridova.Values)
+            {
+                br.isDioPuta = false;
+            }
+
             neprođeniČvorovi.Clear();
 
             foreach (Čvor cv in Plan.skupČvorova.Values)
