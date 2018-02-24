@@ -162,7 +162,13 @@ namespace GPSaplikacija
                     g.DrawString("NOVI", fontKojiKoristim, textBrushLight, xNaMapi, yNaMapi + 5);
                 }
             }
-            
+
+            // reset dijkstra Brids
+            foreach (Brid br in Plan.skupBridova.Values)
+            {
+                br.isDioPuta = false;
+            }
+
         }
 
         private void GumbSmanji_Click(object sender, EventArgs e)

@@ -14,13 +14,13 @@ namespace GPSaplikacija
         [STAThread]
         static void Main()
         {
-            //Plan.UcitajPlan("zagreb-centar.txt");
-            DatabaseUpiti.StvoriPlanIzBaze();
+            Plan.UcitajPlan("zagreb-centar.txt");
+            //DatabaseUpiti.StvoriPlanIzBaze();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            DatabaseConnection.CheckSqlConnection();
+            //DatabaseConnection.CheckSqlConnection();
 
             Form1 forma = new Form1();
             forma.SkalirajMapuPoPlanu();

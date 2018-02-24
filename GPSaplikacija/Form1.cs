@@ -486,7 +486,7 @@ namespace GPSaplikacija
         }
 
 
-        private void DijkstraTest(object sender, EventArgs e)
+        private void DijkstraPut(object sender, EventArgs e)
         {
             String s1 = odabraniPočetniObavijest.Text;
             String s2 = odabraniZavršniObavijest.Text;
@@ -495,6 +495,20 @@ namespace GPSaplikacija
             s2 = s2.Substring(l1);
 
             Plan.nadiNajkraciPut(s1,s2);
+
+            pictureBox1.Refresh();
+        }
+
+        private void DijkstraPosao(object sender, EventArgs e)
+        {
+            String s1 = odabraniPočetniObavijest.Text;
+            String posao = unešeniPosao.Text;
+            String s2 = odabraniZavršniObavijest.Text;           
+            int l1 = "- odabrani čvor: ".Length;
+            s1 = s1.Substring(l1);
+            s2 = s2.Substring(l1);
+
+            Plan.nadiNajkraciPutUzPosao(s1, posao, s2);
 
             pictureBox1.Refresh();
         }
@@ -605,7 +619,7 @@ namespace GPSaplikacija
 
             tražiNajkraći.Text = "TRAŽI";
             tražiNajkraći.Location = new Point(700, 20);
-            tražiNajkraći.Click += DijkstraTest;
+            tražiNajkraći.Click += DijkstraPut;
 
             unesitePosaoOpis.Text = "Unesite posao: ";
             unesitePosaoOpis.AutoSize = true;
@@ -616,6 +630,7 @@ namespace GPSaplikacija
 
             tražiPutUzPosao.Text = "TRAŽI";
             tražiPutUzPosao.Location = new Point(700, 20);
+            tražiPutUzPosao.Click += DijkstraPosao;
         }
 
         private void spremanjeSnimkeZaslona_Click(object sender, EventArgs e)

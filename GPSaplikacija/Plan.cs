@@ -148,6 +148,11 @@ namespace GPSaplikacija
             Čvor c1 = skupČvorova[s1];
             Čvor c2 = skupČvorova[s2];
 
+            foreach (Brid br in skupBridova.Values)
+            {
+                br.isDioPuta = false;
+            }
+
             dijkstrinAlgoritam.nadiPutIzmedu(c1, c2);
 
             //String messageText = "RJEŠENJE;\n";
@@ -164,6 +169,54 @@ namespace GPSaplikacija
 
             //MessageBox.Show(messageText,"NAJKRAĆI PUT",MessageBoxButtons.OK);
 		}
+
+        public static void nadiNajkraciPutUzPosao(String s1, String posao, String s2)
+        {
+            Čvor c1 = skupČvorova[s1];
+            Čvor p;
+            try
+            {
+                p = skupČvorova[posao];
+            }
+            catch
+            {
+                MessageBox.Show("Upišite postojeći čvor pa tražite ponovno", "Nepostojeći čvor!",MessageBoxButtons.OK);
+                return;
+            }
+            Čvor c2 = skupČvorova[s2];
+
+            foreach (Brid br in skupBridova.Values)
+            {
+                br.isDioPuta = false;
+            }
+           
+            dijkstrinAlgoritam.nadiPutIzmedu(c1, p);
+
+            //String messageText = "RJEŠENJE;\n";
+
+            int putID = 0;
+            Čvor cc = p;
+            while (cc.bridPrethodnik != null)
+            {
+                putID++;
+                cc.bridPrethodnik.isDioPuta = true;
+                //messageText += (putID + ".: " + cc.bridPrethodnik + "\n");
+                cc = cc.bridPrethodnik.PočetniČvor == cc ? cc.bridPrethodnik.ZavršniČvor : cc.bridPrethodnik.PočetniČvor;
+            }
+
+            dijkstrinAlgoritam.nadiPutIzmedu(p, c2);
+
+            cc = c2;
+            while (cc.bridPrethodnik != null)
+            {
+                putID++;
+                cc.bridPrethodnik.isDioPuta = true;
+                //messageText += (putID + ".: " + cc.bridPrethodnik + "\n");
+                cc = cc.bridPrethodnik.PočetniČvor == cc ? cc.bridPrethodnik.ZavršniČvor : cc.bridPrethodnik.PočetniČvor;
+            }
+
+            //MessageBox.Show(messageText,"NAJKRAĆI PUT",MessageBoxButtons.OK);
+        }
 
         public static Dictionary<string, Čvor> SkupČvorova
         {
