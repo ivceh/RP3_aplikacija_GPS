@@ -12,15 +12,15 @@
 		{ "naziv": "Lisinski", "x": 400, "y": 660 }
 	],
 	"bridovi": [
-		{ "naziv": "Bijenicka", "pocetni": "PMF", "zavrsni": "TrgBJJ", "vrijeme": 2.43 },
-		{ "naziv": "Srebrnjak", "pocetni": "Kvatric", "zavrsni": "PMF", "vrijeme": 4.1 },
-		{ "naziv": "Vlaska", "pocetni": "TrgBJJ", "zavrsni": "Kvatric", "vrijeme": 4.33 },
-		{ "naziv": "Maksimirska", "pocetni": "Kvatric", "zavrsni": "Maksimir", "vrijeme": 7 },
-		{ "naziv": "Ilica1", "pocetni": "TrgBJJ", "zavrsni": "TrgdrFT", "vrijeme": 10.3 },
-		{ "naziv": "Ilica2", "pocetni": "TrgdrFT", "zavrsni": "Crnomerec", "vrijeme": 5.3 },
-		{ "naziv": "Zrinjevac", "pocetni": "TrgBJJ", "zavrsni": "GK", "vrijeme": 5.3 },
-		{ "naziv": "Heinzelova", "pocetni": "Kvatric", "zavrsni": "McD", "vrijeme": 13.2 },
-		{ "naziv": "Vukovarska", "pocetni": "McD", "zavrsni": "Lisinski", "vrijeme": 13.2 },
-		{ "naziv": "Paromlinska", "pocetni": "Lisinski", "zavrsni": "GK", "vrijeme": 13.2 }
+		{ "naziv": "Bijenicka", "pocetni": "PMF", "zavrsni": "TrgBJJ", "vrijeme": 360 },
+		{ "naziv": "Srebrnjak", "pocetni": "Kvatric", "zavrsni": "PMF", "vrijeme": 300 },
+		{ "naziv": "Vlaska", "pocetni": "TrgBJJ", "zavrsni": "Kvatric", "vrijeme": 720 },
+		{ "naziv": "Maksimirska", "pocetni": "Kvatric", "zavrsni": "Maksimir", "vrijeme": 360 },
+		{ "naziv": "Ilica1", "pocetni": "TrgBJJ", "zavrsni": "TrgdrFT", "vrijeme": 720 },
+		{ "naziv": "Ilica2", "pocetni": "TrgdrFT", "zavrsni": "Crnomerec", "vrijeme": 300 },
+		{ "naziv": "Zrinjevac", "pocetni": "TrgBJJ", "zavrsni": "GK", "vrijeme": 660 },
+		{ "naziv": "Heinzelova", "pocetni": "Kvatric", "zavrsni": "McD", "vrijeme": 360 },
+		{ "naziv": "Vukovarska", "pocetni": "McD", "zavrsni": "Lisinski", "vrijeme": 300 },
+		{ "naziv": "Paromlinska", "pocetni": "Lisinski", "zavrsni": "GK", "vrijeme": 120 }
 	]
 }
