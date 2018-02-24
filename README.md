@@ -5,8 +5,7 @@ Grupni projektni zadatak iz kolegija Računarski praktikum 3 (PMF Zagreb, matema
 PREOSTALI TODO:
 
 1. Klikom na čvor ili brid sa strane na već označenom mjestu pojavljuje se opis (Čeh)
-2. Nađi put, ali posao usput - klikom na gumb Nađi put -> Posao usput (ideje...)
-3. Traženje karakteristike (klikom na gumb Pronađi)
+2. Traženje karakteristike (klikom na gumb Pronađi)
 
 --------------------------------
 
@@ -22,3 +21,4 @@ DONE:
   - bojanje novog čvora koji korisnik misli dodati na kartu (Horvat)
   - bojanje odabranog čvora (kod dodavanja brida ili traženja puta) (Horvat)
   - komunikacija s bazom podataka (Čeh)
+  - Nađi put, ali posao usput - klikom na gumb Nađi put -> Posao usput (Lovnički)
