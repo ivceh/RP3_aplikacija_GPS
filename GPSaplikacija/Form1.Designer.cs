@@ -405,7 +405,7 @@
             this.formaPozadinaToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.formaPozadinaToolStripMenuItem.Text = "Forma - pozadina";
             this.formaPozadinaToolStripMenuItem.ToolTipText = "Odaberite boju pozadine plana.";
-            this.formaPozadinaToolStripMenuItem.Click += new System.EventHandler(this.formaPozadinaToolStripMenuItem_Click);
+            this.formaPozadinaToolStripMenuItem.Click += new System.EventHandler(this.FormaPozadinaToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -420,7 +420,7 @@
             this.odaberiFontToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.odaberiFontToolStripMenuItem.Text = "Odaberi font";
             this.odaberiFontToolStripMenuItem.ToolTipText = "Odaberite font za nazive čvorova i bridova.";
-            this.odaberiFontToolStripMenuItem.Click += new System.EventHandler(this.odaberiFontToolStripMenuItem_Click);
+            this.odaberiFontToolStripMenuItem.Click += new System.EventHandler(this.OdaberiFontToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
@@ -435,7 +435,7 @@
             this.sviranje.Size = new System.Drawing.Size(240, 22);
             this.sviranje.Text = "Sviraj nešto";
             this.sviranje.ToolTipText = "Pustite si malo glazbe dok se zabavljate u našoj aplikaciji.";
-            this.sviranje.Click += new System.EventHandler(this.svirajNeštoToolStripMenuItem_Click);
+            this.sviranje.Click += new System.EventHandler(this.SvirajNeštoToolStripMenuItem_Click);
             // 
             // spremanjeSnimkeZaslona
             // 
@@ -446,12 +446,12 @@
             this.spremanjeSnimkeZaslona.Size = new System.Drawing.Size(92, 22);
             this.spremanjeSnimkeZaslona.Text = "&Snimka zaslona";
             this.spremanjeSnimkeZaslona.ToolTipText = "Spremite trenutnu snimku zaslona cijele aplikacije.";
-            this.spremanjeSnimkeZaslona.Click += new System.EventHandler(this.spremanjeSnimkeZaslona_Click);
+            this.spremanjeSnimkeZaslona.Click += new System.EventHandler(this.SpremanjeSnimkeZaslona_Click);
             // 
             // timer1
             // 
             this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // Form1
             // 

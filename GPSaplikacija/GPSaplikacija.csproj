@@ -136,6 +136,10 @@
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
     <Content Include="gpsIcon.ico" />
+    <Content Include="gradovi\grad1.txt" />
+    <Content Include="gradovi\zagreb-centar.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Ikson-Remember.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

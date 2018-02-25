@@ -90,7 +90,7 @@ namespace GPSaplikacija
                     xzNaMapi = (float)Skaliraj(cz.X, xlijevi, xdesni, 0, pictureBox1.Width);
                     yzNaMapi = (float)Skaliraj(cz.Y, ygornji, ydonji, 0, pictureBox1.Height);
 
-                    if (b.isDioPuta)
+                    if (b.isDioPutaIliImaKarakteristiku)
                     {
                         g.DrawLine(dijBridVanjska, xpNaMapi, ypNaMapi, xzNaMapi, yzNaMapi);
                         g.DrawLine(dijBridUnutarnja, xpNaMapi, ypNaMapi, xzNaMapi, yzNaMapi);
@@ -117,7 +117,8 @@ namespace GPSaplikacija
 
 
                 string defaultni = "- odabrani čvor: ";
-                if (č.naziv == odabraniPočetniObavijest.Text.Substring(defaultni.Length) && uPostupkuOznačavanjaČvorova == true)
+                if ((č.naziv == odabraniPočetniObavijest.Text.Substring(defaultni.Length) && uPostupkuOznačavanjaČvorova == true) ||
+                    č.imaKarakteristiku)
                 {
                     Brush početni = new SolidBrush(Color.Blue);
                     g.FillEllipse(početni, xNaMapi - 5, yNaMapi - 5, 10, 10);
@@ -166,9 +167,14 @@ namespace GPSaplikacija
             // reset dijkstra Brids
             foreach (Brid br in Plan.skupBridova.Values)
             {
-                br.isDioPuta = false;
+                br.isDioPutaIliImaKarakteristiku = false;
             }
 
+            // reset Karakteristike
+            foreach (Čvor č in Plan.skupČvorova.Values)
+            {
+                č.imaKarakteristiku = false;
+            }
         }
 
         private void GumbSmanji_Click(object sender, EventArgs e)

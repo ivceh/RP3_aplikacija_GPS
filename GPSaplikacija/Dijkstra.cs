@@ -15,7 +15,7 @@ namespace GPSaplikacija
 
         }
 
-        public void nadiPutIzmedu(Čvor c1, Čvor c2)
+        public void NadiPutIzmedu(Čvor c1, Čvor c2)
         {
             neprođeniČvorovi.Clear();
 

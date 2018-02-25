@@ -17,6 +17,8 @@ namespace GPSaplikacija
         public double udaljenostOdPocetka;
         public Brid bridPrethodnik;
 
+        public bool imaKarakteristiku = false;
+
         public Čvor(string naziv, double x, double y)
         {
             this.naziv = naziv;
@@ -27,8 +29,6 @@ namespace GPSaplikacija
 
         public void DodajSusjedniBrid(Brid susjed)
         {
-            if (skupSusjednihBridova.Contains(susjed))
-                susjed = susjed;
             skupSusjednihBridova.Add(susjed);
         }
 

@@ -14,7 +14,7 @@ namespace GPSaplikacija
         double vrijemeProlaska; //u sekundama
 
         // podaci vezani uz Dijkstrino traženje
-        public bool isDioPuta = false;
+        public bool isDioPutaIliImaKarakteristiku = false;
 
         public Brid(string naziv, Čvor početni, Čvor završni, double vrijeme)
         {

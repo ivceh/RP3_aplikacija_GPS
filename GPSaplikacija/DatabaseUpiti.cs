@@ -13,13 +13,24 @@ namespace GPSaplikacija
 {
     static class DatabaseUpiti
     {
+        static MySqlCommand sqlCmd = DatabaseConnection.sqlCmd;
+        static MySqlParameter nazivParam = new MySqlParameter("@naziv", MySqlDBType.String, 0);
+        static MySqlParameter karakteristikaParam = new MySqlParameter("@karakteristika", MySqlDBType.String, 0);
+
+        static DatabaseUpiti()
+        {
+            sqlCmd.Connection = DatabaseConnection.sqlConn;
+            sqlCmd.Parameters.Add(nazivParam);
+            sqlCmd.Parameters.Add(karakteristikaParam);
+        }
+
         public static void StvoriPlanIzBaze()
         {
             StvoriČvoroveIzBaze();
             StvoriBridoveIzBaze();
         }
 
-        static void StvoriČvoroveIzBaze()
+        public static void StvoriČvoroveIzBaze()
         {
             try
             {
@@ -48,7 +59,7 @@ namespace GPSaplikacija
             }
         }
 
-        static void StvoriBridoveIzBaze()
+        public static void StvoriBridoveIzBaze()
         {
             try
             {
@@ -79,12 +90,12 @@ namespace GPSaplikacija
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Greška pri čitanju iz baze!", "Greška",
+                MessageBox.Show("Greška pri čitanju iz baze! " + ex.Message, "Greška",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        static string OpisČvora(string ime)
+        public static string OpisČvora(string ime)
         {
             string opis;
 
@@ -92,13 +103,9 @@ namespace GPSaplikacija
             {
                 DatabaseConnection.CheckSqlConnection();
 
-                MySqlCommand sqlCmd = DatabaseConnection.sqlCmd;
-                sqlCmd.Connection = DatabaseConnection.sqlConn;
                 sqlCmd.CommandText = "SELECT Opis FROM Cvorovi WHERE Naziv = @naziv";
-
-                MySqlParameter nazivParam = new MySqlParameter("@id", MySqlDBType.String, 0);
+                
                 nazivParam.Value = ime;
-                sqlCmd.Parameters.Add(nazivParam);
 
                 sqlCmd.Prepare();
                 MySqlDataReader sqlReader = sqlCmd.ExecuteReader();
@@ -115,9 +122,9 @@ namespace GPSaplikacija
 
                 sqlReader.Close();
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Greška pri čitanju iz baze!", "Greška",
+                MessageBox.Show("Greška pri čitanju iz baze! " + ex.Message, "Greška",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 opis = "Greška";
             }
@@ -125,7 +132,7 @@ namespace GPSaplikacija
             return opis;
         }
 
-        static string OpisBrida(string ime)
+        public static string OpisBrida(string ime)
         {
             string opis;
 
@@ -136,10 +143,8 @@ namespace GPSaplikacija
                 MySqlCommand sqlCmd = DatabaseConnection.sqlCmd;
                 sqlCmd.Connection = DatabaseConnection.sqlConn;
                 sqlCmd.CommandText = "SELECT Opis FROM Bridovi WHERE Naziv = @naziv";
-
-                MySqlParameter nazivParam = new MySqlParameter("@id", MySqlDBType.String, 0);
+                
                 nazivParam.Value = ime;
-                sqlCmd.Parameters.Add(nazivParam);
 
                 sqlCmd.Prepare();
                 MySqlDataReader sqlReader = sqlCmd.ExecuteReader();
@@ -156,14 +161,61 @@ namespace GPSaplikacija
 
                 sqlReader.Close();
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Greška pri čitanju iz baze!", "Greška",
+                MessageBox.Show("Greška pri čitanju iz baze! " + ex.Message, "Greška",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 opis = "Greška";
             }
 
             return opis;
+        }
+
+        public static Tuple<HashSet<Čvor>, HashSet<Brid> > ČvoroviIBridoviSaSvojstvom(string karakteristika)
+        {
+            Tuple<HashSet<Čvor>, HashSet<Brid>> rješenje =
+                new Tuple<HashSet<Čvor>, HashSet<Brid>>(new HashSet<Čvor>(), new HashSet<Brid>());
+
+            try
+            {
+                DatabaseConnection.CheckSqlConnection();
+
+                MySqlCommand sqlCmd = DatabaseConnection.sqlCmd;
+                sqlCmd.Connection = DatabaseConnection.sqlConn;
+                sqlCmd.CommandText = "SELECT Cvorovi.Naziv " +
+                    "FROM Cvorovi LEFT OUTER JOIN Karakteristike ON Cvorovi.ID = Karakteristike.ID_necega " +
+                    "WHERE Karakteristike.Naziv = @karakteristika AND Karakteristike.Type = 'Cvor'";
+                
+                karakteristikaParam.Value = karakteristika;
+
+                sqlCmd.Prepare();
+                MySqlDataReader sqlReader = sqlCmd.ExecuteReader();
+
+                while (sqlReader.Read())
+                    rješenje.Item1.Add(Plan.skupČvorova[(string)sqlReader["Naziv"]]);
+
+                sqlReader.Close();
+
+                sqlCmd.CommandText = "SELECT Bridovi.Naziv " +
+                    "FROM Bridovi LEFT OUTER JOIN Karakteristike ON Bridovi.ID = Karakteristike.ID_necega " +
+                    "WHERE Karakteristike.Naziv = @karakteristika AND Karakteristike.Type = 'Brid'";
+
+                sqlCmd.Prepare();
+                sqlReader = sqlCmd.ExecuteReader();
+
+                while (sqlReader.Read())
+                    rješenje.Item2.Add(Plan.skupBridova[(string)sqlReader["Naziv"]]);
+
+                sqlReader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Greška pri čitanju iz baze! " + ex.Message, "Greška",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                rješenje = null;
+            }
+
+            return rješenje;
         }
     }
 }

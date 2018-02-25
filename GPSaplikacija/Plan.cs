@@ -110,7 +110,7 @@ namespace GPSaplikacija
         {
             try
             {
-                string planString = System.IO.File.ReadAllText(@"../../gradovi/" + confFile);
+                string planString = System.IO.File.ReadAllText(@"gradovi/" + confFile);
                 JObject planObjekt = JObject.Parse(planString);
 
                 JArray cvorovi = (JArray)planObjekt["cvorovi"];
@@ -143,17 +143,17 @@ namespace GPSaplikacija
             //nadiNajkraciPut(skupČvorova["PMF"], skupČvorova["Crnomerec"]);
         }
 
-        public static void nadiNajkraciPut(String s1, String s2)
+        public static void NadiNajkraciPut(String s1, String s2)
         {
             Čvor c1 = skupČvorova[s1];
             Čvor c2 = skupČvorova[s2];
 
             foreach (Brid br in skupBridova.Values)
             {
-                br.isDioPuta = false;
+                br.isDioPutaIliImaKarakteristiku = false;
             }
 
-            dijkstrinAlgoritam.nadiPutIzmedu(c1, c2);
+            dijkstrinAlgoritam.NadiPutIzmedu(c1, c2);
 
             //String messageText = "RJEŠENJE;\n";
 
@@ -162,7 +162,7 @@ namespace GPSaplikacija
             while (cc.bridPrethodnik != null)
             {
                 putID++;
-                cc.bridPrethodnik.isDioPuta = true;
+                cc.bridPrethodnik.isDioPutaIliImaKarakteristiku = true;
                 //messageText += (putID + ".: " + cc.bridPrethodnik + "\n");
                 cc = cc.bridPrethodnik.PočetniČvor == cc ? cc.bridPrethodnik.ZavršniČvor : cc.bridPrethodnik.PočetniČvor;
             }
@@ -170,7 +170,7 @@ namespace GPSaplikacija
             //MessageBox.Show(messageText,"NAJKRAĆI PUT",MessageBoxButtons.OK);
 		}
 
-        public static void nadiNajkraciPutUzPosao(String s1, String posao, String s2)
+        public static void NadiNajkraciPutUzPosao(String s1, String posao, String s2)
         {
             Čvor c1 = skupČvorova[s1];
             Čvor p;
@@ -187,10 +187,10 @@ namespace GPSaplikacija
 
             foreach (Brid br in skupBridova.Values)
             {
-                br.isDioPuta = false;
+                br.isDioPutaIliImaKarakteristiku = false;
             }
            
-            dijkstrinAlgoritam.nadiPutIzmedu(c1, p);
+            dijkstrinAlgoritam.NadiPutIzmedu(c1, p);
 
             //String messageText = "RJEŠENJE;\n";
 
@@ -199,18 +199,18 @@ namespace GPSaplikacija
             while (cc.bridPrethodnik != null)
             {
                 putID++;
-                cc.bridPrethodnik.isDioPuta = true;
+                cc.bridPrethodnik.isDioPutaIliImaKarakteristiku = true;
                 //messageText += (putID + ".: " + cc.bridPrethodnik + "\n");
                 cc = cc.bridPrethodnik.PočetniČvor == cc ? cc.bridPrethodnik.ZavršniČvor : cc.bridPrethodnik.PočetniČvor;
             }
 
-            dijkstrinAlgoritam.nadiPutIzmedu(p, c2);
+            dijkstrinAlgoritam.NadiPutIzmedu(p, c2);
 
             cc = c2;
             while (cc.bridPrethodnik != null)
             {
                 putID++;
-                cc.bridPrethodnik.isDioPuta = true;
+                cc.bridPrethodnik.isDioPutaIliImaKarakteristiku = true;
                 //messageText += (putID + ".: " + cc.bridPrethodnik + "\n");
                 cc = cc.bridPrethodnik.PočetniČvor == cc ? cc.bridPrethodnik.ZavršniČvor : cc.bridPrethodnik.PočetniČvor;
             }

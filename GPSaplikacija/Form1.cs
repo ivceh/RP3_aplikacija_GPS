@@ -265,6 +265,7 @@ namespace GPSaplikacija
                     {
                         odabraniZavršniObavijest.Text = "- odabrani čvor: " + najbliziCvor;
                     }
+                    labelOpis.Text = najbliziCvor + ": " + DatabaseUpiti.OpisČvora(najbliziCvor);
                 }
             }
 
@@ -341,7 +342,7 @@ namespace GPSaplikacija
             }
         }
 
-        private void dodajČvorPlanu(object sender, EventArgs e)
+        private void DodajČvorPlanu(object sender, EventArgs e)
         {
             budućiČvorPostoji = false;
 
@@ -494,7 +495,7 @@ namespace GPSaplikacija
             s1 = s1.Substring(l1);
             s2 = s2.Substring(l1);
 
-            Plan.nadiNajkraciPut(s1,s2);
+            Plan.NadiNajkraciPut(s1,s2);
 
             pictureBox1.Refresh();
         }
@@ -508,7 +509,7 @@ namespace GPSaplikacija
             s1 = s1.Substring(l1);
             s2 = s2.Substring(l1);
 
-            Plan.nadiNajkraciPutUzPosao(s1, posao, s2);
+            Plan.NadiNajkraciPutUzPosao(s1, posao, s2);
 
             pictureBox1.Refresh();
         }
@@ -547,7 +548,7 @@ namespace GPSaplikacija
 
             dodajČvor.Text = "DODAJ";
             dodajČvor.Location = new Point(500, 30);
-            dodajČvor.Click += dodajČvorPlanu;
+            dodajČvor.Click += DodajČvorPlanu;
 
             gumbOdustani.Text = "ODUSTANI";
             gumbOdustani.Click += OčistiPanel;
@@ -613,9 +614,11 @@ namespace GPSaplikacija
 
             označiKarakteristiku.Text = "OZNAČI";
             označiKarakteristiku.Location = new Point(700, 5);
+            označiKarakteristiku.Click += TražiKarakteristiku;
 
             odznačiKarakteristiku.Text = "ODZNAČI";
             odznačiKarakteristiku.Location = new Point(700, 35);
+            odznačiKarakteristiku.Click += MakniKarakteristiku;
 
             tražiNajkraći.Text = "TRAŽI";
             tražiNajkraći.Location = new Point(700, 20);
@@ -633,7 +636,7 @@ namespace GPSaplikacija
             tražiPutUzPosao.Click += DijkstraPosao;
         }
 
-        private void spremanjeSnimkeZaslona_Click(object sender, EventArgs e)
+        private void SpremanjeSnimkeZaslona_Click(object sender, EventArgs e)
         {
             Bitmap memoryImage;
             //slika je dimenzija koje ima forma (jer želimo snimak forme)
@@ -685,7 +688,7 @@ namespace GPSaplikacija
             Console.WriteLine("Snimka zaslona uspješno spremljena...");
         }
 
-        private void formaPozadinaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void FormaPozadinaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -694,7 +697,7 @@ namespace GPSaplikacija
             }
         }
 
-        private void odaberiFontToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OdaberiFontToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Pokaži prozor za odabir fonta.
             DialogResult result = fontDialog1.ShowDialog();
@@ -710,7 +713,7 @@ namespace GPSaplikacija
             }
         }
 
-        private void svirajNeštoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SvirajNeštoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if(glazbaSvira == false)
             {
@@ -737,11 +740,26 @@ namespace GPSaplikacija
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
             DateTime theDate;
             theDate = DateTime.Now;
             vrijeme.Text = theDate.ToString();
+        }
+
+        private void TražiKarakteristiku(object sender, EventArgs e)
+        {
+            var rj = DatabaseUpiti.ČvoroviIBridoviSaSvojstvom(unešenaKarakteristika.Text);
+            foreach (Čvor č in rj.Item1)
+                č.imaKarakteristiku = true;
+            foreach (Brid b in rj.Item2)
+                b.isDioPutaIliImaKarakteristiku = true;
+            pictureBox1.Refresh();
+        }
+
+        private void MakniKarakteristiku(object sender, EventArgs e)
+        {
+            pictureBox1.Refresh();
         }
     }
 }
